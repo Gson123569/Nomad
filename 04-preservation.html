@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preservation Tier — $100M-$500M | Nomad Wealth Atlas</title>
+    <meta name="description" content="Wealth Tier 4 of 8: Preservation strategies for $100M-$500M. Dynasty trusts, generation-skipping planning, single family offices, and philanthropic structures.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Preservation Tier — $100M-$500M: Dynasty Planning & First Family Office",
+        "description": "Wealth Tier 4 of 8: Preservation strategies for $100M-$500M. Dynasty trusts, generation-skipping planning, single family offices, and philanthropic structures.",
+        "author": {"@type": "Organization", "name": "Nomad Wealth Atlas"},
+        "publisher": {"@type": "Organization", "name": "Nomad Wealth Atlas"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is a dynasty trust?", "acceptedAnswer": {"@type": "Answer", "text": "A dynasty trust is designed to last for multiple generations, preserving wealth while minimizing estate taxes at each generational transfer through perpetual or long-term duration."}},
+            {"@type": "Question", "name": "What is a Single Family Office (SFO)?", "acceptedAnswer": {"@type": "Answer", "text": "A Single Family Office is a private company that manages investments and affairs for one wealthy family, typically requiring $100M+ to justify the operational costs."}},
+            {"@type": "Question", "name": "What is generation-skipping planning?", "acceptedAnswer": {"@type": "Answer", "text": "Generation-skipping planning transfers wealth directly to grandchildren or later generations, bypassing the children's generation to minimize estate taxes at each transfer."}}
+        ]
+    }
+    </script>
+    <style>
+        :root{--gold:#d4af37;--gold-light:#f4e4a6;--dark:#0a0a0a;--dark-2:#1a1a1a;--text:#e0e0e0;--muted:#888;--accent:#2d5a27}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .hero{min-height:60vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--dark)0%,var(--dark-2)100%);position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(circle at 70% 50%,rgba(212,175,55,0.1)0%,transparent 60%)}
+        .hero-content{position:relative;z-index:1}
+        .tier-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:8px 20px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;margin-bottom:15px;line-height:1.2}
+        .hero h1 span{color:var(--gold);font-weight:500}
+        .hero-subtitle{font-size:1.3rem;color:var(--muted);max-width:600px;margin-bottom:30px}
+        .tier-icon{width:120px;height:120px;position:absolute;right:10%;top:50%;transform:translateY(-50%);opacity:0.3}
+        .snapshot{background:var(--dark-2);padding:40px 0;border-bottom:1px solid #333}
+        .snapshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:20px}
+        .snapshot-card{background:rgba(255,255,255,0.03);padding:25px;border-radius:12px;border-left:3px solid var(--gold)}
+        .snapshot-card h3{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+        .snapshot-card ul{list-style:none}
+        .snapshot-card li{padding:8px 0;padding-left:20px;position:relative}
+        .snapshot-card li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+        .complexity-indicator{display:flex;align-items:center;gap:10px;margin-top:15px}
+        .complexity-dots{display:flex;gap:5px}
+        .dot{width:12px;height:12px;border-radius:50%;background:#333}
+        .dot.active{background:var(--gold)}
+        .architecture{padding:60px 0}
+        .section-title{font-size:2rem;font-weight:300;margin-bottom:10px}
+        .section-title span{color:var(--gold)}
+        .section-subtitle{color:var(--muted);margin-bottom:40px}
+        .concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px;margin-top:30px}
+        .concept-card{background:rgba(255,255,255,0.02);padding:25px;border-radius:12px;border:1px solid #333;transition:all 0.3s}
+        .concept-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+        .concept-term{color:var(--gold);font-size:1.1rem;font-weight:500;margin-bottom:10px}
+        .concept-def{color:var(--text);margin-bottom:10px}
+        .concept-why{color:var(--muted);font-size:0.9rem;font-style:italic}
+        .playbook{padding:60px 0;background:var(--dark-2)}
+        .strategy-card{background:rgba(255,255,255,0.02);border-radius:16px;margin-bottom:25px;overflow:hidden;border:1px solid #333}
+        .strategy-header{padding:25px 30px;background:rgba(212,175,55,0.05);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s}
+        .strategy-header:hover{background:rgba(212,175,55,0.1)}
+        .strategy-header h3{color:var(--gold);font-size:1.3rem;font-weight:500}
+        .strategy-number{color:var(--muted);font-size:0.9rem}
+        .strategy-content{padding:30px;display:none}
+        .strategy-content.active{display:block}
+        .strategy-section{margin-bottom:25px}
+        .strategy-section h4{color:var(--gold-light);font-size:1rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+        .strategy-section p{color:var(--text);line-height:1.8}
+        .strategy-section ul{list-style:none;padding-left:0}
+        .strategy-section li{padding:8px 0;padding-left:25px;position:relative}
+        .strategy-section li::before{content:'•';position:absolute;left:10px;color:var(--gold)}
+        .risk-warning{background:rgba(180,50,50,0.1);border-left:3px solid #b43232;padding:15px 20px;border-radius:0 8px 8px 0;margin-top:15px}
+        .risk-warning strong{color:#ff6b6b}
+        .case-study{background:rgba(45,90,39,0.1);border-left:3px solid var(--accent);padding:20px;border-radius:0 8px 8px 0;margin-top:20px}
+        .case-study h4{color:var(--accent);margin-bottom:10px}
+        .jurisdictions{padding:60px 0}
+        .jurisdiction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;margin-top:30px}
+        .jurisdiction-card{background:rgba(255,255,255,0.02);border-radius:16px;padding:25px;border:1px solid #333;transition:all 0.3s}
+        .jurisdiction-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+        .jurisdiction-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+        .flag{width:50px;height:35px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+        .jurisdiction-name{font-size:1.2rem;font-weight:500}
+        .regime-name{color:var(--gold);font-size:0.95rem;margin-bottom:5px}
+        .rate-tag{display:inline-block;background:rgba(212,175,55,0.15);color:var(--gold);padding:5px 15px;border-radius:20px;font-size:0.85rem;font-weight:500;margin-bottom:15px}
+        .catch-section,.bestfor-section{margin-bottom:15px}
+        .catch-section h4,.bestfor-section h4{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+        .catch-section p{color:#ff8a8a;font-size:0.9rem}
+        .bestfor-section p{color:var(--text);font-size:0.9rem}
+        .navigation{background:var(--dark-2);padding:40px 0;border-top:1px solid #333}
+        .nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:20px}
+        .nav-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid #333;transition:all 0.3s}
+        .nav-card:hover{border-color:var(--gold);background:rgba(212,175,55,0.05)}
+        .nav-card.current{border-color:var(--gold);background:rgba(212,175,55,0.1)}
+        .nav-card .tier-num{color:var(--gold);font-size:0.8rem}
+        .nav-card .tier-name{font-weight:500;margin-top:5px}
+        .nav-card .tier-range{color:var(--muted);font-size:0.85rem}
+        .tooltip{position:relative;display:inline-block;border-bottom:1px dotted var(--gold);cursor:help}
+        .tooltip:hover::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:var(--dark-2);color:var(--text);padding:10px 15px;border-radius:8px;border:1px solid var(--gold);white-space:nowrap;z-index:100;font-size:0.85rem}
+        .cta-section{padding:60px 0;text-align:center;background:linear-gradient(135deg,var(--dark-2)0%,var(--dark)100%)}
+        .cta-button{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s}
+        .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,175,55,0.3)}
+        @media(max-width:768px){.tier-icon{display:none}.concept-grid,.jurisdiction-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="tier-badge">Wealth Tier 4 of 8: Preservation</span>
+            <h1>Preservation Tier — <span>$100M-$500M</span></h1>
+            <p class="hero-subtitle">The dynasty threshold: when wealth transitions from personal accumulation to multi-generational preservation and the first family office becomes viable.</p>
+            <svg class="tier-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="35" stroke="#d4af37"/>
+                <circle cx="50" cy="50" r="25" stroke="#d4af37"/>
+                <circle cx="50" cy="50" r="15" stroke="#d4af37"/>
+                <circle cx="50" cy="50" r="5" fill="#d4af37"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="snapshot">
+        <div class="container">
+            <h2 class="section-title">The <span>Snapshot</span></h2>
+            <p class="section-subtitle">What defines this tier in 30 seconds</p>
+            <div class="snapshot-grid">
+                <div class="snapshot-card">
+                    <h3>Defining Characteristics</h3>
+                    <ul>
+                        <li>Wealth sufficient to justify dedicated family office operations</li>
+                        <li>Multi-generational planning becomes the primary objective</li>
+                        <li>Dynasty trusts, generation-skipping, and perpetual structures emerge</li>
+                    </ul>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Typical Profile</h3>
+                    <p style="margin-bottom:15px">Crypto exchange founder with $200M, multi-generational concerns. Has built significant wealth rapidly and now faces the challenge of preserving it for children and grandchildren while navigating complex regulatory and tax environments.</p>
+                    <div class="complexity-indicator">
+                        <span>Complexity:</span>
+                        <div class="complexity-dots">
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span>Very High</span>
+                    </div>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Key Transition</h3>
+                    <ul>
+                        <li>From: Wealth accumulation and tax optimization</li>
+                        <li>To: Dynasty preservation and institutional management</li>
+                        <li>Trigger: Recognition that wealth will outlive the creator by generations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title">The <span>Architecture</span></h2>
+            <p class="section-subtitle">What changes at this level and why it matters</p>
+            
+            <div style="background:rgba(255,255,255,0.02);padding:30px;border-radius:16px;margin-bottom:40px;border:1px solid #333">
+                <h3 style="color:var(--gold);margin-bottom:15px">What Changes at This Level</h3>
+                <p style="line-height:1.9;color:var(--text)">At $100M-$500M, you cross the threshold where professional wealth management becomes not just advisable but essential. The complexity of your affairs—multiple entities across jurisdictions, diverse asset classes, family dynamics, philanthropic interests—exceeds what traditional advisors can coordinate. This is the tier where the Single Family Office (SFO) becomes viable: a dedicated organization managing your family's complete financial and personal affairs.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">The psychological shift is profound. You are no longer building wealth; you are stewarding it for future generations. Questions of legacy, values transmission, and family unity become as important as investment returns. The structures you create—dynasty trusts, generation-skipping arrangements, philanthropic vehicles—are designed to last decades or centuries, not years.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">This tier also introduces the challenge of "wealth complexity." At this scale, your wealth likely includes operating businesses, real estate portfolios, private equity investments, public securities, and potentially alternative assets like art, aircraft, or yachts. Each asset class requires specialized expertise. Each jurisdiction imposes different requirements. Coordinating this complexity is the primary function of your emerging family office.</p>
+            </div>
+
+            <h3 style="margin-bottom:20px">Key Concepts You Must Understand</h3>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Dynasty Trust: Trust designed to last multiple generations with minimal estate taxes">Dynasty Trust</span></div>
+                    <div class="concept-def">A dynasty trust is designed to last for multiple generations, preserving wealth while minimizing estate taxes at each generational transfer through perpetual or long-term duration.</div>
+                    <div class="concept-why">Why it matters: Without dynasty planning, wealth can be reduced by 40-50% every generation through estate taxes. Dynasty trusts preserve capital across centuries.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Single Family Office: Private company managing investments for one wealthy family">Single Family Office</span></div>
+                    <div class="concept-def">A Single Family Office is a private company that manages investments and affairs for one wealthy family, typically requiring $100M+ to justify operational costs.</div>
+                    <div class="concept-why">Why it matters: At this scale, the cost of an SFO ($1-5M annually) is justified by improved coordination, reduced fees, and aligned incentives compared to using multiple external advisors.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Generation-Skipping Transfer Tax: Tax on transfers to grandchildren or later generations">GST Tax</span></div>
+                    <div class="concept-def">Generation-Skipping Transfer Tax applies to transfers that skip a generation, ensuring wealth transfers to grandchildren or later generations are taxed appropriately.</div>
+                    <div class="concept-why">Why it matters: GST tax can be 40% in addition to estate tax. Proper GST planning is essential for multi-generational wealth preservation.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Private Trust Company: Family-owned entity that serves as trustee for family trusts">PTC</span></div>
+                    <div class="concept-def">A Private Trust Company is a family-owned entity that serves as trustee for family trusts, providing control while maintaining trust benefits and privacy.</div>
+                    <div class="concept-why">Why it matters: PTCs enable families to retain control over trust assets while still achieving asset protection and tax benefits of trust structures.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Donor-Advised Fund: Philanthropic vehicle allowing donors to make contributions and recommend grants">DAF</span></div>
+                    <div class="concept-def">A Donor-Advised Fund is a philanthropic vehicle that allows donors to make tax-deductible contributions and recommend grants to charities over time.</div>
+                    <div class="concept-why">Why it matters: DAFs provide immediate tax deductions while allowing time for thoughtful grant-making, and can be established with minimal administrative burden.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Jurisdiction Arbitrage: Selecting optimal jurisdictions for different trust and entity purposes">Jurisdiction Arbitrage</span></div>
+                    <div class="concept-def">Jurisdiction arbitrage involves selecting optimal jurisdictions for different purposes—asset protection trusts in one, holding companies in another, family office in a third.</div>
+                    <div class="concept-why">Why it matters: No single jurisdiction is optimal for all purposes. Sophisticated structures leverage the strengths of multiple jurisdictions.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="playbook">
+        <div class="container">
+            <h2 class="section-title">The <span>Playbook</span></h2>
+            <p class="section-subtitle">Six strategies for the Preservation tier—expand each for execution details</p>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 01</span>
+                        <h3>Dynasty Trust Architecture</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Dynasty trusts are designed to preserve wealth across multiple generations while minimizing transfer taxes at each generation. Unlike traditional trusts that terminate after a set period, dynasty trusts can last for centuries in jurisdictions that have abolished or extended the Rule Against Perpetuities. South Dakota, Nevada, and Wyoming in the US; Cayman Islands, Bermuda, and Jersey internationally offer particularly favorable dynasty trust laws.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Select jurisdiction based on perpetuity laws, asset protection statutes, and tax treatment—South Dakota offers 1000+ year trusts</li>
+                            <li>Fund trusts using available gift and GST tax exemptions—current US exemptions are at historic highs ($13.61M per person in 2024)</li>
+                            <li>Consider "decanting" provisions allowing trust assets to be transferred to new trusts with modified terms</li>
+                            <li>Establish trust protector roles with power to modify trust terms as circumstances change</li>
+                            <li>Include flexible distribution standards that adapt to beneficiaries' changing needs across generations</li>
+                            <li>Create parallel trusts for different branches of the family to accommodate divergent interests</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Dynasty trusts are irrevocable and complex. Once established, they cannot easily be modified or terminated. Poorly designed dynasty trusts can create family conflict, trap assets in inflexible structures, or fail to achieve intended tax benefits. Professional design is essential.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Harrison Dynasty Structure</h4>
+                        <p>Thomas Harrison, with $280M from a tech exit, established South Dakota dynasty trusts for each of his three children, funding them with $40M total using his and his wife's combined gift and GST exemptions. The trusts are designed to last 500 years, with flexible distribution standards and trust protector provisions. Projected savings over three generations exceed $150M in estate taxes, while the structure provides asset protection and promotes family financial responsibility through required distributions for education, health, and entrepreneurship.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 02</span>
+                        <h3>Generation-Skipping Transfer Planning</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Generation-Skipping Transfer (GST) planning involves transferring wealth directly to grandchildren or later generations, bypassing the children's generation. This can dramatically reduce transfer taxes over multiple generations—instead of paying estate tax at each generation, wealth passes directly to grandchildren with only one layer of taxation. GST tax exemptions (currently $13.61M per person in the US) enable significant tax-free transfers.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Allocate GST exemption to transfers most likely to appreciate—typically to dynasty trusts or direct skip gifts</li>
+                            <li>Consider "GST-exempt" trusts that leverage exemption to create entirely tax-sheltered wealth for future generations</li>
+                            <li>Understand the inclusion ratio—transfers that don't fully use exemption create partially exempt trusts</li>
+                            <li>Plan for reverse GST—when a skip person predeceases, GST may apply to transfers to their estate</li>
+                            <li>Coordinate GST planning with overall estate planning—exemptions are unified with estate and gift tax</li>
+                            <li>Monitor legislative changes—GST exemptions and rules have changed significantly over time</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> GST tax is punitive—up to 40% in addition to estate tax. Errors in GST planning can be extremely costly. The rules are complex and vary by jurisdiction. Professional guidance from GST specialists is non-negotiable.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Chen Multi-Generational Plan</h4>
+                        <p>Michael Chen, with $350M, allocated his full GST exemption to dynasty trusts for his four grandchildren. The trusts were funded with appreciating assets—private company stock expected to grow significantly. By allocating GST exemption at funding, all future appreciation escapes GST tax entirely. Projected value at grandchildren's retirement (50 years) is $800M+, all GST-exempt. Without this planning, GST tax alone would exceed $300M at that point.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 03</span>
+                        <h3>Single Family Office Establishment</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>A Single Family Office (SFO) is a private organization dedicated to managing one family's wealth and affairs. At $100M+, the complexity of investment management, tax planning, philanthropy, family governance, and lifestyle management justifies dedicated professional staff. An SFO provides coordination that external advisors cannot, aligning all aspects of family wealth management under one roof.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Define SFO scope: investment management only, or comprehensive including tax, legal, philanthropy, family services</li>
+                            <li>Select jurisdiction based on regulatory environment, talent availability, and proximity to family—Singapore, Switzerland, and Delaware are popular choices</li>
+                            <li>Determine staffing model: dedicated employees, outsourced functions, or hybrid approach</li>
+                            <li>Establish governance: family office board, investment committee, family council coordination</li>
+                            <li>Implement technology infrastructure: portfolio management, accounting, reporting, and family communication systems</li>
+                            <li>Budget appropriately: expect $1-5M annually for a full-service SFO at this wealth level</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> SFOs are expensive to establish and operate. Poorly designed SFOs can become bureaucratic, disconnected from family needs, or sources of family conflict. Consider starting with a virtual or outsourced family office before building full internal capabilities.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Morrison Family Office</h4>
+                        <p>The Morrison family, with $420M from a manufacturing sale, established their SFO in Singapore with a team of eight professionals: CIO, two investment analysts, tax director, legal counsel, family services coordinator, and two administrative staff. Annual operating cost is $3.2M, but the SFO has delivered value through: consolidated reporting saving 200+ hours annually of family time, direct private investments avoiding fund fees (saving $2M+ annually), coordinated tax planning reducing effective rate by 4%, and professional philanthropy management increasing grant impact by 30%.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 04</span>
+                        <h3>Philanthropic Structure Design</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>At this tier, philanthropy becomes a significant component of family wealth and identity. Properly structured philanthropic vehicles can achieve social impact while providing tax benefits, family engagement opportunities, and legacy building. Options range from simple Donor-Advised Funds to private foundations to complex supporting organizations, each with different trade-offs between control, flexibility, and administrative burden.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Define philanthropic objectives: specific causes, geographic focus, family involvement level, perpetuity vs. spend-down</li>
+                            <li>Select vehicle type: DAFs for simplicity, private foundations for control, LLCs for flexibility, supporting organizations for public charity benefits</li>
+                            <li>Consider jurisdiction: US offers 501(c)(3) status with significant tax benefits; UK has charitable trust structures; Singapore offers IPC status</li>
+                            <li>Establish governance: board composition, family involvement, grant-making processes, investment policies</li>
+                            <li>Plan for next-generation engagement: youth boards, family service trips, philanthropic education</li>
+                            <li>Integrate with overall wealth planning: charitable giving can reduce estate tax and provide income tax deductions</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Philanthropic structures involve significant regulatory compliance. Private foundations face minimum distribution requirements, excise taxes on investment income, and strict self-dealing rules. Violations can result in penalties and loss of tax-exempt status.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Patel Foundation</h4>
+                        <p>The Patel family, with $180M, established a private foundation with $50M initial funding focused on education in India. The foundation is governed by a board of five: two family members, two independent experts, and one community representative. Annual grant-making is $2.5M (5% of assets), with additional program-related investments. The structure has engaged three generations of the family in philanthropy, provided $15M in tax deductions over five years, and created a lasting legacy in their ancestral region.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 05</span>
+                        <h3>Pre-Liquidity Event Planning</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>For wealth at this tier, liquidity events—IPO, acquisition, secondary sale—can trigger massive tax liabilities if not properly planned. Pre-liquidity planning involves structuring ownership, establishing charitable vehicles, and implementing transfer strategies before the event occurs. Once liquidity is achieved, many planning options are no longer available or are significantly less effective.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Begin planning 2-3 years before anticipated liquidity—many strategies require time to implement properly</li>
+                            <li>Consider gifting or selling assets to family trusts or entities before valuation increases</li>
+                            <li>Establish charitable structures that can receive appreciated assets—avoiding capital gains tax while generating deductions</li>
+                            <li>Review and optimize entity structures—consolidate or restructure to prepare for public market requirements</li>
+                            <li>Plan for lock-up periods and staged liquidity—coordinate tax planning with sale timing</li>
+                            <li>Prepare for post-liquidity life: investment policy, family office, philanthropy, and lifestyle planning</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Pre-liquidity planning must be genuine and not solely tax-motivated. Transactions lacking business purpose may be challenged as tax avoidance. Work with experienced advisors who understand both the technical requirements and the "smell test" that tax authorities apply.</n                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Pre-IPO Planning Success</h4>
+                        <p>Alexandra founded a SaaS company valued at $50M and anticipated an IPO in 18 months. She implemented pre-liquidity planning: gifted 15% of shares to a dynasty trust for her children (using $7.5M of gift exemption), established a private foundation with 5% of shares, and restructured remaining ownership through a holding company. At IPO, the company was valued at $400M. The pre-liquidity gifts removed $60M of appreciation from her estate, the foundation provided $20M in deductions, and the holding company structure enabled ongoing tax-efficient management. Total tax savings exceeded $35M.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 06</span>
+                        <h3>Jurisdiction Arbitrage Mastery</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Jurisdiction arbitrage involves selecting optimal jurisdictions for different purposes—asset protection trusts in South Dakota, holding companies in Luxembourg, family office in Singapore, and personal residence in Portugal. No single jurisdiction is optimal for all purposes. Sophisticated structures leverage the strengths of multiple jurisdictions while managing the complexity of multi-jurisdictional coordination.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Map all family assets, entities, and activities across current jurisdictions</li>
+                            <li>Identify optimal jurisdictions for each function: asset protection, tax efficiency, regulatory environment, lifestyle</li>
+                            <li>Understand the interaction between jurisdictions—tax treaties, information exchange agreements, regulatory cooperation</li>
+                            <li>Establish substance in each jurisdiction where entities are located—offices, directors, employees</li>
+                            <li>Maintain compliance across all jurisdictions—filing requirements, reporting obligations, substance documentation</li>
+                            <li>Regularly review and optimize as laws change and family circumstances evolve</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Multi-jurisdictional structures face increased scrutiny and complexity. Information exchange agreements (CRS, FATCA) mean privacy is limited. Compliance costs multiply with each jurisdiction. Ensure the benefits justify the complexity and ongoing costs.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Global Arbitrage Structure</h4>
+                        <p>The Nakamura family, with $380M, implemented a five-jurisdiction structure: South Dakota dynasty trusts for asset protection and perpetuity, Luxembourg holding companies for European investments, Singapore family office for Asia-Pacific operations, Swiss private banking for wealth management, and Portuguese residence for lifestyle and EU access. Annual compliance costs exceed $800,000, but the structure provides: optimal asset protection, 40% reduction in effective tax rate, regulatory diversification, and lifestyle flexibility. The family maintains genuine substance in each jurisdiction through offices, directors, and regular presence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jurisdictions">
+        <div class="container">
+            <h2 class="section-title">The <span>Jurisdictions</span></h2>
+            <p class="section-subtitle">Six programs accessible at the Preservation tier—each with honest disclosure of drawbacks</p>
+
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇨🇭</div>
+                        <div>
+                            <div class="jurisdiction-name">Switzerland</div>
+                            <div class="regime-name">Family Office Hub</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">Lump Sum Taxation Available</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Extremely high cost of living and operations. Complex canton-by-canton rules. Limited to certain cantons for lump sum. Not available to Swiss citizens. Banking secrecy has eroded.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Family office headquarters, those prioritizing stability and discretion, European wealth management, multi-generational families seeking education and healthcare excellence.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇸🇬</div>
+                        <div>
+                            <div class="jurisdiction-name">Singapore</div>
+                            <div class="regime-name">Single Family Office (SFO) Scheme</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">Tax Exemptions on Specified Income</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>S$200M AUM requirement for tax exemptions. Strict substance requirements. High cost of living. Limited personal freedoms compared to West. Regional competition increasing.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Asia-Pacific family offices, those with regional business interests, families prioritizing education and safety, crypto and tech wealth.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇦🇪</div>
+                        <div>
+                            <div class="jurisdiction-name">UAE</div>
+                            <div class="regime-name">DIFC Family Office Framework</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% Personal and Corporate Tax</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Limited track record for family offices. Reputation concerns in some contexts. Geopolitical considerations. 9% corporate tax introduced (though exemptions available). Limited talent pool.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Middle East regional families, crypto and fintech wealth, those seeking zero tax, families with regional business interests, privacy-focused wealth holders.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇰🇾</div>
+                        <div>
+                            <div class="jurisdiction-name">Cayman Islands</div>
+                            <div class="regime-name">STAR Trusts + Exempted Companies</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% All Taxes</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>High establishment costs. Limited infrastructure. Reputation concerns. No tax treaties. Substance requirements increasing. Hurricane risk. Isolation from business centers.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>The Best For</h4>
+                        <p>Asset protection trusts, investment holding, fund structures, privacy-focused wealth, those with existing Caribbean connections.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇧🇲</div>
+                        <div>
+                            <div class="jurisdiction-name">Bermuda</div>
+                            <div class="regime-name">Trusts + Exempted Companies</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% Corporate Tax</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Extremely high costs. Limited infrastructure. Reputation concerns. No tax treaties. Hurricane risk. Small professional community. Isolation.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Insurance-linked structures, asset protection trusts, ultra-high-net-worth privacy, those with existing Bermuda connections, reinsurance wealth.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇯🇪</div>
+                        <div>
+                            <div class="jurisdiction-name">Jersey</div>
+                            <div class="regime-name">Trusts + Foundations</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% Standard Corporate Rate</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>High costs. Limited to financial services. Small island with limited amenities. UK influence over laws. CRS and transparency requirements. Reputation concerns.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>UK-connected families, trusts and foundations, investment holding, those seeking English law with tax efficiency, European wealth structures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom:20px">Ready to Calculate Your Optimal Strategy?</h2>
+            <p style="color:var(--muted);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto">Use our comprehensive calculator to compare jurisdictions, model tax scenarios, and identify your optimal wealth tier progression path.</p>
+            <a href="calculator.html" class="cta-button">Launch Wealth Calculator</a>
+        </div>
+    </section>
+
+    <section class="navigation">
+        <div class="container">
+            <h3 style="margin-bottom:20px;color:var(--muted);font-size:0.9rem;text-transform:uppercase;letter-spacing:1px">Explore All Wealth Tiers</h3>
+            <div class="nav-grid">
+                <a href="01-escape.html" class="nav-card">
+                    <div class="tier-num">Tier 1</div>
+                    <div class="tier-name">Escape</div>
+                    <div class="tier-range">$1M - $5M</div>
+                </a>
+                <a href="02-foundations.html" class="nav-card">
+                    <div class="tier-num">Tier 2</div>
+                    <div class="tier-name">Foundations</div>
+                    <div class="tier-range">$5M - $20M</div>
+                </a>
+                <a href="03-optimization.html" class="nav-card">
+                    <div class="tier-num">Tier 3</div>
+                    <div class="tier-name">Structure</div>
+                    <div class="tier-range">$20M - $100M</div>
+                </a>
+                <a href="04-preservation.html" class="nav-card current">
+                    <div class="tier-num">Tier 4</div>
+                    <div class="tier-name">Preservation</div>
+                    <div class="tier-range">$100M - $500M</div>
+                </a>
+                <a href="05-structures.html" class="nav-card">
+                    <div class="tier-num">Tier 5</div>
+                    <div class="tier-name">Structures</div>
+                    <div class="tier-range">$500M - $2B</div>
+                </a>
+                <a href="06-vehicles.html" class="nav-card">
+                    <div class="tier-num">Tier 6</div>
+                    <div class="tier-name">Vehicles</div>
+                    <div class="tier-range">$2B - $10B</div>
+                </a>
+                <a href="07-legacy.html" class="nav-card">
+                    <div class="tier-num">Tier 7</div>
+                    <div class="tier-name">Legacy</div>
+                    <div class="tier-range">$10B - $1T</div>
+                </a>
+                <a href="08-civilization.html" class="nav-card">
+                    <div class="tier-num">Tier 8</div>
+                    <div class="tier-name">Civilization</div>
+                    <div class="tier-range">$1T - $100T</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background:var(--dark);padding:40px 0;text-align:center;border-top:1px solid #333">
+        <div class="container">
+            <p style="color:var(--muted);font-size:0.9rem">Nomad Wealth Atlas — Educational content for global citizens. Not financial, tax, or legal advice.</p>
+            <p style="color:var(--muted);font-size:0.8rem;margin-top:10px">Consult qualified professionals before making any financial decisions.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now & Roadmap | Nomad Wealth Atlas</title>
+    <meta name="description" content="What's new at Nomad Wealth Atlas: changelog, upcoming features, and development roadmap. Stay updated on new jurisdictions and calculator improvements.">
+    <link rel="canonical" href="https://nomadwealthatlas.com/now.html">
+    <link rel="alternate" type="application/rss+xml" title="Nomad Wealth Atlas Updates" href="feed.xml">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Now & Roadmap",
+        "description": "Changelog and development roadmap for Nomad Wealth Atlas",
+        "url": "https://nomadwealthatlas.com/now.html"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #d69e2e;
+            --accent-light: #ecc94b;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --bg: #ffffff;
+            --bg-alt: #f7fafc;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --info: #3182ce;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        /* Navigation */
+        .nav {
+            background: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .nav-links a.active {
+            color: var(--accent-light);
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-intro {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        /* Status Indicators */
+        .status-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .status-card {
+            background: var(--bg-alt);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .status-card h4 {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        .status-dot.green {
+            background: var(--success);
+        }
+        
+        .status-dot.yellow {
+            background: var(--warning);
+        }
+        
+        .status-dot.blue {
+            background: var(--info);
+        }
+        
+        /* Changelog */
+        .changelog {
+            position: relative;
+        }
+        
+        .changelog::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .changelog-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2rem;
+        }
+        
+        .changelog-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .changelog-dot {
+            position: absolute;
+            left: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--border);
+        }
+        
+        .changelog-dot.feature {
+            background: var(--success);
+        }
+        
+        .changelog-dot.update {
+            background: var(--info);
+        }
+        
+        .changelog-dot.upcoming {
+            background: var(--text-light);
+        }
+        
+        .changelog-date {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .changelog-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .changelog-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .changelog-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .tag-launch {
+            background: rgba(56, 161, 105, 0.15);
+            color: var(--success);
+        }
+        
+        .tag-feature {
+            background: rgba(49, 130, 206, 0.15);
+            color: var(--info);
+        }
+        
+        .tag-upcoming {
+            background: rgba(113, 128, 150, 0.15);
+            color: var(--text-light);
+        }
+        
+        /* What's Next */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .roadmap-card {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .roadmap-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .roadmap-list {
+            list-style: none;
+        }
+        
+        .roadmap-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .roadmap-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* RSS & Newsletter */
+        .subscribe-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .subscribe-section h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        .subscribe-section p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .subscribe-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-white:hover {
+            background: var(--bg-alt);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+        
+        /* Email Form */
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: 1.5rem auto 0;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .email-form button {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .email-form button:hover {
+            background: var(--accent-light);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--accent-light);
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .section {
+                padding: 2.5rem 0;
+            }
+            
+            .status-bar {
+                grid-template-columns: 1fr;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .subscribe-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Nomad Wealth Atlas</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="tiers.html">Wealth Tiers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="now.html" class="active">Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <h1>Now & Roadmap</h1>
+        <p>What's happening now and what's coming next at Nomad Wealth Atlas.</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Status Indicators -->
+            <section class="section">
+                <h2>📊 System Status</h2>
+                <div class="status-bar">
+                    <div class="status-card">
+                        <h4>Tax Rates Database</h4>
+                        <div class="status-value">
+                            <span class="status-dot green"></span>
+                            Current — Updated January 2025
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <h4>Regulatory Alerts</h4>
+                        <div class="status-value">
+                            <span class="status-dot green"></span>
+                            None Active
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <h4>Calculator Engine</h4>
+                        <div class="status-value">
+                            <span class="status-dot green"></span>
+                            v1.0 Operational
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Changelog -->
+            <section class="section">
+                <h2>📝 Changelog</h2>
+                <p class="section-intro">Recent updates and releases in reverse chronological order.</p>
+                
+                <div class="changelog">
+                    <div class="changelog-item">
+                        <div class="changelog-dot feature"></div>
+                        <div class="changelog-date">January 2025</div>
+                        <div class="changelog-title">
+                            Site Launch
+                            <span class="changelog-tag tag-launch">Launch</span>
+                        </div>
+                        <div class="changelog-desc">
+                            Initial release of Nomad Wealth Atlas with 8 comprehensive wealth tiers covering UAE, Monaco, Switzerland, Cayman Islands, Singapore, Malta, Portugal, and Puerto Rico.
+                        </div>
+                    </div>
+                    
+                    <div class="changelog-item">
+                        <div class="changelog-dot feature"></div>
+                        <div class="changelog-date">January 2025</div>
+                        <div class="changelog-title">
+                            Tax Calculator v1.0
+                            <span class="changelog-tag tag-feature">Feature</span>
+                        </div>
+                        <div class="changelog-desc">
+                            Released the interactive tax calculator with support for all 8 jurisdictions. Compare effective tax rates across multiple scenarios.
+                        </div>
+                    </div>
+                    
+                    <div class="changelog-item">
+                        <div class="changelog-dot update"></div>
+                        <div class="changelog-date">January 2025</div>
+                        <div class="changelog-title">
+                            AI Transparency Page
+                            <span class="changelog-tag tag-feature">Feature</span>
+                        </div>
+                        <div class="changelog-desc">
+                            Added comprehensive AI transparency documentation explaining how artificial intelligence assists with research and content organization.
+                        </div>
+                    </div>
+                    
+                    <div class="changelog-item">
+                        <div class="changelog-dot upcoming"></div>
+                        <div class="changelog-date">Coming Soon</div>
+                        <div class="changelog-title">
+                            Jurisdiction Deep-Dives
+                            <span class="changelog-tag tag-upcoming">Planned</span>
+                        </div>
+                        <div class="changelog-desc">
+                            Detailed analysis pages for each jurisdiction including treaty networks, residency requirements, and practical setup guides.
+                        </div>
+                    </div>
+                    
+                    <div class="changelog-item">
+                        <div class="changelog-dot upcoming"></div>
+                        <div class="changelog-date">Coming Soon</div>
+                        <div class="changelog-title">
+                            Interactive Treaty Map
+                            <span class="changelog-tag tag-upcoming">Planned</span>
+                        </div>
+                        <div class="changelog-desc">
+                            Visual map showing bilateral tax treaties between jurisdictions with withholding rate information.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What's Next -->
+            <section class="section">
+                <h2>🚀 What's Next</h2>
+                <p class="section-intro">Upcoming jurisdictions, features, and improvements on our roadmap.</p>
+                
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <h4>🌍 New Jurisdictions</h4>
+                        <ul class="roadmap-list">
+                            <li>Greece — Non-dom regime analysis</li>
+                            <li>Cyprus — Tax residency options</li>
+                            <li>Thailand — Long-term resident visa</li>
+                            <li>Andorra — Low-tax residency</li>
+                            <li>Costa Rica — Territorial tax system</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="roadmap-card">
+                        <h4>⚙️ Calculator Improvements</h4>
+                        <ul class="roadmap-list">
+                            <li>More jurisdiction options</li>
+                            <li>Social security contribution estimates</li>
+                            <li>Exit tax calculations</li>
+                            <li>Multi-year projections</li>
+                            <li>Save & compare scenarios</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="roadmap-card">
+                        <h4>📚 Content Expansion</h4>
+                        <ul class="roadmap-list">
+                            <li>Treaty network visualizations</li>
+                            <li>Residency requirement checklists</li>
+                            <li>Banking setup guides</li>
+                            <li>Corporate structure comparisons</li>
+                            <li>Video explainers</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RSS & Newsletter -->
+            <section class="section">
+                <h2>📡 Stay Updated</h2>
+                
+                <div class="subscribe-section">
+                    <h3>Never Miss an Update</h3>
+                    <p>Get notified when we add new jurisdictions, features, or important regulatory changes.</p>
+                    
+                    <div class="subscribe-buttons">
+                        <a href="feed.xml" class="btn btn-white">
+                            <span>📶</span> RSS Feed
+                        </a>
+                        <a href="#newsletter" class="btn btn-outline">
+                            <span>✉️</span> Email Updates
+                        </a>
+                    </div>
+                    
+                    <form class="email-form" id="newsletter" onsubmit="event.preventDefault(); alert('Thank you for subscribing! We will send updates to your email.');">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Feedback -->
+            <section class="section">
+                <h2>💬 Have a Suggestion?</h2>
+                <p class="section-intro">We prioritize features and jurisdictions based on user feedback.</p>
+                
+                <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <p style="margin-bottom: 1rem;">Want to see a specific jurisdiction or feature? Let us know.</p>
+                    <a href="mailto:feedback@nomadwealthatlas.com" class="btn btn-primary" style="background: var(--primary); color: white; text-decoration: none;">
+                        Send Feedback
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="calculator.html">Tax Calculator</a></li>
+                        <li><a href="tiers.html">Wealth Tiers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="sources.html">Sources</a></li>
+                        <li><a href="now.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="ai-transparency.html">AI Transparency</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Nomad Wealth Atlas. Not financial or legal advice. Consult qualified professionals.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

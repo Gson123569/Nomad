@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Transparency & Governance | Nomad Wealth Atlas</title>
+  <meta name="description" content="Complete transparency about AI use, governance framework, and human oversight at Nomad Wealth Atlas. EU AI Act compliant disclosure.">
+  
+  <!-- Schema.org markup for AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "AI Transparency & Governance",
+    "description": "Complete transparency about AI use, governance framework, and human oversight at Nomad Wealth Atlas",
+    "url": "https://nomadwealthatlas.com/ai-transparency.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Nomad Wealth Atlas",
+      "url": "https://nomadwealthatlas.com",
+      "sameAs": []
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nomad Wealth Atlas"
+    },
+    "dateModified": "2024-12-19"
+  }
+  </script>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Transparency & Governance | Nomad Wealth Atlas">
+  <meta property="og:description" content="How we use artificial intelligence responsibly. Complete governance disclosure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomadwealthatlas.com/ai-transparency.html">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  
+  <style>
+    /* AI Nutrition Label Styles */
+    .ai-nutrition-label {
+      background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      max-width: 500px;
+      margin: 0 auto var(--space-5);
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .ai-nutrition-label::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-success) 50%, var(--color-accent) 100%);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    
+    .nutrition-header {
+      text-align: center;
+      padding-bottom: var(--space-3);
+      border-bottom: 3px solid var(--color-border);
+      margin-bottom: var(--space-3);
+    }
+    
+    .nutrition-badge {
+      display: inline-block;
+      background: var(--color-accent);
+      color: white;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: var(--font-size-sm);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .nutrition-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .nutrition-item:last-child {
+      border-bottom: none;
+    }
+    
+    .nutrition-label {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    
+    .nutrition-value {
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-align: right;
+    }
+    
+    .nutrition-value.positive {
+      color: var(--color-success);
+    }
+    
+    .risk-badge {
+      display: inline-block;
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .risk-minimal {
+      background: rgba(34, 197, 94, 0.15);
+      color: #16a34a;
+    }
+    
+    /* Governance Dashboard Styles */
+    .governance-dashboard {
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+    }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+    }
+    
+    .dashboard-metric {
+      text-align: center;
+      padding: var(--space-4);
+      background: var(--color-bg-primary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: var(--space-1);
+    }
+    
+    .metric-value.success {
+      color: var(--color-success);
+    }
+    
+    .metric-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .metric-status {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      font-size: var(--font-size-sm);
+      color: var(--color-success);
+      margin-top: var(--space-2);
+    }
+    
+    .check-icon {
+      width: 16px;
+      height: 16px;
+      background: var(--color-success);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+    }
+    
+    /* Table Styles */
+    .provenance-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-4) 0;
+      font-size: var(--font-size-sm);
+    }
+    
+    .provenance-table th,
+    .provenance-table td {
+      padding: var(--space-3);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .provenance-table th {
+      background: var(--color-bg-secondary);
+      font-weight: 600;
+      color: var(--color-text-primary);
+      text-transform: uppercase;
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.05em;
+    }
+    
+    .provenance-table tr:hover {
+      background: var(--color-bg-secondary);
+    }
+    
+    .role-badge {
+      display: inline-block;
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+    }
+    
+    .role-human {
+      background: rgba(34, 197, 94, 0.15);
+      color: #16a34a;
+    }
+    
+    .role-ai {
+      background: rgba(59, 130, 246, 0.15);
+      color: #2563eb;
+    }
+    
+    .role-hybrid {
+      background: rgba(139, 92, 246, 0.15);
+      color: #7c3aed;
+    }
+    
+    /* Ethics Framework Lists */
+    .ethics-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .ethics-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .ethics-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .ethics-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    
+    .ethics-icon.negative {
+      background: rgba(239, 68, 68, 0.15);
+      color: #dc2626;
+    }
+    
+    .ethics-icon.positive {
+      background: rgba(34, 197, 94, 0.15);
+      color: #16a34a;
+    }
+    
+    /* Contact Form Styles */
+    .contact-form {
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+    }
+    
+    .form-group {
+      margin-bottom: var(--space-4);
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: inherit;
+      font-size: var(--font-size-base);
+      transition: border-color 0.2s ease;
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* User Rights Grid */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-4);
+    }
+    
+    .right-card {
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+      transition: box-shadow 0.2s ease;
+    }
+    
+    .right-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .right-title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-2);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    
+    .right-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--color-accent);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+    }
+    
+    /* Section Divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--color-border) 50%, transparent 100%);
+      margin: var(--space-6) 0;
+    }
+    
+    /* Quote Block */
+    .ethics-quote {
+      background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+      border-left: 4px solid var(--color-accent);
+      padding: var(--space-5);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin: var(--space-4) 0;
+    }
+    
+    .ethics-quote p {
+      font-size: var(--font-size-lg);
+      font-style: italic;
+      color: var(--color-text-primary);
+      margin: 0;
+    }
+    
+    .ethics-quote cite {
+      display: block;
+      margin-top: var(--space-3);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">N</span>
+        <span>Nomad Wealth Atlas</span>
+      </a>
+      
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="calculator.html" class="nav-link">Calculator</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="sources.html" class="nav-link">Sources</a>
+      </nav>
+      
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="calculator.html" class="nav-link">Calculator</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="sources.html" class="nav-link">Sources</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">AI Transparency & Governance</h1>
+      <p class="hero-subtitle">How we use artificial intelligence responsibly</p>
+      <div class="hero-cta">
+        <a href="#nutrition-label" class="btn btn-primary btn-lg">View AI Disclosure</a>
+        <a href="#contact" class="btn btn-secondary btn-lg">Request Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Section 1: AI Nutrition Label -->
+    <section id="nutrition-label" class="section">
+      <div class="container container-narrow">
+        <h2 class="text-center mb-2">AI Nutrition Label</h2>
+        <p class="text-center text-muted mb-4">At-a-glance transparency about our AI use</p>
+        
+        <div class="ai-nutrition-label">
+          <div class="nutrition-header">
+            <span class="nutrition-badge">AI-Assisted Content — High Human Oversight</span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">Risk Classification</span>
+            <span class="nutrition-value">
+              <span class="risk-badge risk-minimal">Minimal Risk</span>
+            </span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">EU AI Act Category</span>
+            <span class="nutrition-value">Informational / Educational</span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">Data Governance</span>
+            <span class="nutrition-value positive">No personal data fed to AI</span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">Content Type</span>
+            <span class="nutrition-value">Static content only</span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">Human-in-the-Loop</span>
+            <span class="nutrition-value positive">All tax strategies verified</span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">Primary Source Check</span>
+            <span class="nutrition-value positive">IRS, OECD, official sources</span>
+          </div>
+          
+          <div class="nutrition-item">
+            <span class="nutrition-label">Last Verified</span>
+            <span class="nutrition-value">December 19, 2024</span>
+          </div>
+        </div>
+        
+        <p class="text-center text-small text-muted">This label follows the EU AI Act transparency requirements and industry best practices for AI disclosure.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 2: Content Provenance -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-2">Content Provenance</h2>
+        <p class="text-center text-muted mb-4">How each type of content is created and verified</p>
+        
+        <div style="overflow-x: auto;">
+          <table class="provenance-table">
+            <thead>
+              <tr>
+                <th>Content Type</th>
+                <th>Human/AI Role</th>
+                <th>Verification Method</th>
+                <th>Last Audit Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tax Rate Data</strong></td>
+                <td><span class="role-badge role-human">Human Research</span><br><small>IRS, OECD, official sources</small></td>
+                <td>Cross-referenced quarterly</td>
+                <td>December 19, 2024</td>
+              </tr>
+              <tr>
+                <td><strong>Jurisdiction Summaries</strong></td>
+                <td><span class="role-badge role-hybrid">Human + AI Draft</span><br><small>AI structures, human writes</small></td>
+                <td>Expert review before publication</td>
+                <td>December 19, 2024</td>
+              </tr>
+              <tr>
+                <td><strong>Calculator Logic</strong></td>
+                <td><span class="role-badge role-human">Human Coded</span><br><small>All formulas hand-written</small></td>
+                <td>Unit tested, peer reviewed</td>
+                <td>December 19, 2024</td>
+              </tr>
+              <tr>
+                <td><strong>Strategy Recommendations</strong></td>
+                <td><span class="role-badge role-human">Human Expert</span><br><small>Tax professionals only</small></td>
+                <td>Bar admission verified</td>
+                <td>December 19, 2024</td>
+              </tr>
+              <tr>
+                <td><strong>Case Studies</strong></td>
+                <td><span class="role-badge role-human">Human Written</span><br><small>Fictionalized scenarios</small></td>
+                <td>Fictionalized but realistic</td>
+                <td>December 19, 2024</td>
+              </tr>
+              <tr>
+                <td><strong>Code & Website</strong></td>
+                <td><span class="role-badge role-hybrid">AI-Assisted</span><br><small>Human reviewed all output</small></td>
+                <td>Security audit, accessibility check</td>
+                <td>December 19, 2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="callout callout-success mt-4">
+          <div class="callout-title">Verification Promise</div>
+          <p>Every factual claim about tax rates, residency requirements, or legal obligations is verified against at least two independent primary sources before publication. We do not rely on AI for factual accuracy.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 3: Explainability Statement -->
+    <section class="section">
+      <div class="container container-narrow">
+        <h2 class="text-center mb-4">Explainability Statement</h2>
+        
+        <div class="card">
+          <div class="card-header">
+            <h3>How We Use AI</h3>
+          </div>
+          <div class="card-body">
+            <p>This site employs Large Language Models for structural drafting and content organization. However, all tax figures, legal interpretations, and strategic recommendations are researched and verified by human subject matter experts.</p>
+            <p class="mt-2">Specifically, AI assists with:</p>
+            <ul style="margin-left: var(--space-3); margin-top: var(--space-2);">
+              <li>Generating initial content outlines and structure</li>
+              <li>Suggesting clearer ways to explain complex concepts</li>
+              <li>Proofreading for grammar and readability</li>
+              <li>Writing HTML, CSS, and JavaScript code</li>
+              <li>Summarizing lengthy source documents for human review</li>
+            </ul>
+            <p class="mt-2"><strong>AI never:</strong> Makes final content decisions, provides personalized advice, or interprets tax law without human verification.</p>
+          </div>
+        </div>
+        
+        <div class="card mt-4">
+          <div class="card-header">
+            <h3>Bias Mitigation</h3>
+          </div>
+          <div class="card-body">
+            <p>We actively test for and mitigate two key types of bias:</p>
+            
+            <div class="grid grid-cols-2 mt-3" style="gap: var(--space-4);">
+              <div class="callout callout-success">
+                <div class="callout-title">Geographic Bias</div>
+                <p>We ensure our content does not privilege Western jurisdictions. Our coverage includes emerging markets, Asian financial centers, and developing nations on equal footing.</p>
+              </div>
+              <div class="callout callout-success">
+                <div class="callout-title">Wealth Bias</div>
+                <p>We verify that strategies work for emerging wealth and mid-net-worth individuals, not just established ultra-high-net-worth families.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 4: User Rights -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-2">Your Rights</h2>
+        <p class="text-center text-muted mb-4">GDPR, CCPA, and EU AI Act compliant protections</p>
+        
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="right-title">
+              <span class="right-icon">?</span>
+              Right to Explanation
+            </div>
+            <p>You may request the reasoning behind any recommendation or content piece. We will provide a clear explanation of the sources, logic, and human review process that informed that content.</p>
+            <p class="mt-2"><a href="#contact" class="text-link">Request explanation →</a></p>
+          </div>
+          
+          <div class="right-card">
+            <div class="right-title">
+              <span class="right-icon">👤</span>
+              Right to Human Review
+            </div>
+            <p>You can challenge any AI-generated content and request a human expert review. We commit to responding within 5 business days with a detailed review from a qualified professional.</p>
+            <p class="mt-2"><a href="#contact" class="text-link">Request human review →</a></p>
+          </div>
+          
+          <div class="right-card">
+            <div class="right-title">
+              <span class="right-icon">📋</span>
+              Transparency Log
+            </div>
+            <p>We publish monthly updates on content changes, AI involvement levels, and any corrections made. Subscribe to our governance newsletter for regular updates.</p>
+            <p class="mt-2"><a href="#contact" class="text-link">Subscribe to updates →</a></p>
+          </div>
+          
+          <div class="right-card">
+            <div class="right-title">
+              <span class="right-icon">🔒</span>
+              Data Retention
+            </div>
+            <p><strong>We do not collect personal data.</strong> Calculator inputs remain entirely client-side. Analytics are anonymized. No user data is fed to AI systems or shared with third parties.</p>
+            <p class="mt-2"><a href="#" class="text-link">View privacy policy →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 5: Ethics Framework -->
+    <section class="section">
+      <div class="container container-narrow">
+        <h2 class="text-center mb-4">Ethics Framework</h2>
+        
+        <div class="ethics-quote">
+          <p>"We adhere to the principle that refusing to deploy AI unethically is as important as deploying it ethically."</p>
+          <cite>— Nomad Wealth Atlas AI Governance Charter</cite>
+        </div>
+        
+        <div class="grid grid-cols-2" style="gap: var(--space-5);">
+          <div class="card">
+            <div class="card-header" style="background: rgba(239, 68, 68, 0.1);">
+              <h3 style="color: #dc2626;">We Do NOT Use AI For:</h3>
+            </div>
+            <div class="card-body">
+              <ul class="ethics-list">
+                <li>
+                  <span class="ethics-icon negative">✕</span>
+                  <div>
+                    <strong>Personalized tax advice</strong>
+                    <p class="text-small text-muted">Requires a licensed accountant who knows your specific situation</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ethics-icon negative">✕</span>
+                  <div>
+                    <strong>Legal interpretation</strong>
+                    <p class="text-small text-muted">Requires bar admission and professional liability insurance</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ethics-icon negative">✕</span>
+                  <div>
+                    <strong>Investment recommendations</strong>
+                    <p class="text-small text-muted">Requires fiduciary status and regulatory compliance</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ethics-icon negative">✕</span>
+                  <div>
+                    <strong>Predicting individual user behavior</strong>
+                    <p class="text-small text-muted">We do not profile users or make predictions about individuals</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header" style="background: rgba(34, 197, 94, 0.1);">
+              <h3 style="color: #16a34a;">We DO Use AI For:</h3>
+            </div>
+            <div class="card-body">
+              <ul class="ethics-list">
+                <li>
+                  <span class="ethics-icon positive">✓</span>
+                  <div>
+                    <strong>Content structuring and organization</strong>
+                    <p class="text-small text-muted">Helping present information in clear, logical formats</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ethics-icon positive">✓</span>
+                  <div>
+                    <strong>Language refinement and clarity</strong>
+                    <p class="text-small text-muted">Improving readability while preserving technical accuracy</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ethics-icon positive">✓</span>
+                  <div>
+                    <strong>Research assistance</strong>
+                    <p class="text-small text-muted">Summarizing sources, always human-verified before use</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ethics-icon positive">✓</span>
+                  <div>
+                    <strong>Code generation for calculators</strong>
+                    <p class="text-small text-muted">Technical implementation, human-reviewed for accuracy</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 6: AI Governance Dashboard -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-2">AI Governance Dashboard</h2>
+        <p class="text-center text-muted mb-4">Real-time metrics on our AI governance posture</p>
+        
+        <div class="governance-dashboard">
+          <div class="dashboard-grid">
+            <div class="dashboard-metric">
+              <div class="metric-value">98<span style="font-size: var(--font-size-lg);">/100</span></div>
+              <div class="metric-label">Content Health Score</div>
+              <div class="metric-status">
+                <span class="check-icon">✓</span>
+                Excellent
+              </div>
+            </div>
+            
+            <div class="dashboard-metric">
+              <div class="metric-value success">0</div>
+              <div class="metric-label">Human Verification Queue</div>
+              <div class="metric-status">
+                <span class="check-icon">✓</span>
+                All caught up
+              </div>
+            </div>
+            
+            <div class="dashboard-metric">
+              <div class="metric-value success">✓</div>
+              <div class="metric-label">Bias Audit Results</div>
+              <div class="metric-status">
+                <span class="check-icon">✓</span>
+                Geographic diversity check passed
+              </div>
+            </div>
+            
+            <div class="dashboard-metric">
+              <div class="metric-value" style="font-size: var(--font-size-lg);">Dec 19<br><span style="font-size: var(--font-size-base);">2024</span></div>
+              <div class="metric-label">Last Full Audit</div>
+              <div class="metric-status">
+                <span class="check-icon">✓</span>
+                Completed
+              </div>
+            </div>
+            
+            <div class="dashboard-metric">
+              <div class="metric-value" style="font-size: var(--font-size-lg);">Medium</div>
+              <div class="metric-label">AI Involvement Level</div>
+              <div class="metric-status">
+                <span class="check-icon">✓</span>
+                Structural only
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-4 pt-4" style="border-top: 1px solid var(--color-border);">
+            <div class="grid grid-cols-3" style="gap: var(--space-4); text-align: center;">
+              <div>
+                <p class="text-mono text-accent" style="font-size: var(--font-size-xl); font-weight: 700;">100%</p>
+                <p class="text-small text-muted">Tax facts verified</p>
+              </div>
+              <div>
+                <p class="text-mono text-accent" style="font-size: var(--font-size-xl); font-weight: 700;">0</p>
+                <p class="text-small text-muted">User data points shared with AI</p>
+              </div>
+              <div>
+                <p class="text-mono text-accent" style="font-size: var(--font-size-xl); font-weight: 700;">24h</p>
+                <p class="text-small text-muted">Max response time for review requests</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 7: Contact & Feedback -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="text-center mb-2">Contact & Feedback</h2>
+        <p class="text-center text-muted mb-4">Request human review, ask questions, or subscribe to governance updates</p>
+        
+        <div class="grid grid-cols-2" style="gap: var(--space-5);">
+          <div class="contact-form">
+            <h3 class="mb-4">Request Human Review</h3>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label class="form-label" for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="request-type">Request Type</label>
+                <select id="request-type" name="request_type" class="form-select" required>
+                  <option value="">Select a request type</option>
+                  <option value="explanation">Request explanation of content</option>
+                  <option value="review">Request human review of AI content</option>
+                  <option value="challenge">Challenge factual accuracy</option>
+                  <option value="other">Other transparency question</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="message">Your Message</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Please describe your request in detail. Include specific content or recommendations you'd like reviewed." required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label" for="page-url">Page URL (optional)</label>
+                <input type="url" id="page-url" name="page_url" class="form-input" placeholder="https://nomadwealthatlas.com/...">
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Request</button>
+              
+              <p class="text-small text-muted mt-3">We commit to responding within 5 business days. All requests are reviewed by qualified human experts.</p>
+            </form>
+          </div>
+          
+          <div>
+            <div class="card mb-4">
+              <div class="card-header">
+                <h3>Contact Information</h3>
+              </div>
+              <div class="card-body">
+                <p><strong>Transparency Questions:</strong><br>
+                <a href="mailto:transparency@nomadwealthatlas.com" class="text-link">transparency@nomadwealthatlas.com</a></p>
+                
+                <p class="mt-3"><strong>General Inquiries:</strong><br>
+                <a href="mailto:hello@nomadwealthatlas.com" class="text-link">hello@nomadwealthatlas.com</a></p>
+                
+                <p class="mt-3"><strong>Response Time:</strong><br>
+                We aim to respond to all transparency-related inquiries within 5 business days.</p>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-header">
+                <h3>Governance Newsletter</h3>
+              </div>
+              <div class="card-body">
+                <p>Subscribe to receive monthly updates on:</p>
+                <ul style="margin-left: var(--space-3); margin-top: var(--space-2);">
+                  <li>Content changes and updates</li>
+                  <li>AI involvement level reports</li>
+                  <li>Bias audit results</li>
+                  <li>Governance policy changes</li>
+                </ul>
+                
+                <form action="#" method="POST" class="mt-3">
+                  <div class="form-group">
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                  </div>
+                  <button type="submit" class="btn btn-secondary" style="width: 100%;">Subscribe to Updates</button>
+                </form>
+                
+                <p class="text-small text-muted mt-2">No spam. Unsubscribe anytime. Your email is never shared with AI systems.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="background: var(--color-bg-tertiary);">
+      <div class="container container-narrow text-center">
+        <h2>Our Commitment to Transparency</h2>
+        <p class="text-large mt-2">We believe that trust is earned through openness. This page represents our ongoing commitment to responsible AI use and your right to understand how content is created.</p>
+        <div class="mt-4">
+          <a href="index.html" class="btn btn-primary btn-lg">Return to Home</a>
+          <a href="sources.html" class="btn btn-secondary btn-lg">View Data Sources</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <a href="01-escape.html">Escape Routes</a>
+          <a href="02-foundations.html">Foundations</a>
+          <a href="03-optimization.html">Optimization</a>
+          <a href="04-preservation.html">Preservation</a>
+        </div>
+        <div class="footer-section">
+          <h4>Advanced</h4>
+          <a href="05-structures.html">Structures</a>
+          <a href="06-vehicles.html">Vehicles</a>
+          <a href="07-legacy.html">Legacy</a>
+          <a href="08-civilization.html">Civilization</a>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="calculator.html">Tax Calculator</a>
+          <a href="sources.html">Data Sources</a>
+          <a href="ai-transparency.html">AI Transparency</a>
+          <a href="now.html">Status</a>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <a href="about.html">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Nomad Wealth Atlas. All rights reserved.</p>
+        <p class="text-small text-muted mt-1">Not financial or tax advice. Consult qualified professionals.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Tier — $1M-$5M | Nomad Wealth Atlas</title>
+    <meta name="description" content="Wealth Tier 1 of 8: Personal sovereignty strategies for $1M-$5M. FEIE optimization, Puerto Rico Act 60, Portugal NHR, and digital nomad visas.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Escape Tier — $1M-$5M: Personal Sovereignty Strategies",
+        "description": "Wealth Tier 1 of 8: Personal sovereignty strategies for $1M-$5M. FEIE optimization, Puerto Rico Act 60, Portugal NHR, and digital nomad visas.",
+        "author": {"@type": "Organization", "name": "Nomad Wealth Atlas"},
+        "publisher": {"@type": "Organization", "name": "Nomad Wealth Atlas"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is the Foreign Earned Income Exclusion (FEIE)?", "acceptedAnswer": {"@type": "Answer", "text": "The FEIE allows qualifying US citizens to exclude up to $120,000 (2024) of foreign-earned income from US federal tax. Requires either 330 days outside the US or bona fide foreign residence."}},
+            {"@type": "Question", "name": "What is Portugal's NHR regime?", "acceptedAnswer": {"@type": "Answer", "text": "The Non-Habitual Resident regime offers reduced tax rates for 10 years, including potential 0% tax on foreign-sourced dividends and interest, and flat 20% on Portuguese-sourced employment/business income."}},
+            {"@type": "Question", "name": "What is Puerto Rico Act 60?", "acceptedAnswer": {"@type": "Answer", "text": "Act 60 offers 0% federal tax on Puerto Rico-sourced income for qualifying individuals who become bona fide residents, with a $5,000 annual donation requirement and property purchase."}}
+        ]
+    }
+    </script>
+    <style>
+        :root{--gold:#d4af37;--gold-light:#f4e4a6;--dark:#0a0a0a;--dark-2:#1a1a1a;--text:#e0e0e0;--muted:#888;--accent:#2d5a27}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .hero{min-height:60vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--dark)0%,var(--dark-2)100%);position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(circle at 70% 50%,rgba(212,175,55,0.1)0%,transparent 60%)}
+        .hero-content{position:relative;z-index:1}
+        .tier-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:8px 20px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;margin-bottom:15px;line-height:1.2}
+        .hero h1 span{color:var(--gold);font-weight:500}
+        .hero-subtitle{font-size:1.3rem;color:var(--muted);max-width:600px;margin-bottom:30px}
+        .tier-icon{width:120px;height:120px;position:absolute;right:10%;top:50%;transform:translateY(-50%);opacity:0.3}
+        .snapshot{background:var(--dark-2);padding:40px 0;border-bottom:1px solid #333}
+        .snapshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:20px}
+        .snapshot-card{background:rgba(255,255,255,0.03);padding:25px;border-radius:12px;border-left:3px solid var(--gold)}
+        .snapshot-card h3{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+        .snapshot-card ul{list-style:none}
+        .snapshot-card li{padding:8px 0;padding-left:20px;position:relative}
+        .snapshot-card li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+        .complexity-indicator{display:flex;align-items:center;gap:10px;margin-top:15px}
+        .complexity-dots{display:flex;gap:5px}
+        .dot{width:12px;height:12px;border-radius:50%;background:#333}
+        .dot.active{background:var(--gold)}
+        .architecture{padding:60px 0}
+        .section-title{font-size:2rem;font-weight:300;margin-bottom:10px}
+        .section-title span{color:var(--gold)}
+        .section-subtitle{color:var(--muted);margin-bottom:40px}
+        .concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px;margin-top:30px}
+        .concept-card{background:rgba(255,255,255,0.02);padding:25px;border-radius:12px;border:1px solid #333;transition:all 0.3s}
+        .concept-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+        .concept-term{color:var(--gold);font-size:1.1rem;font-weight:500;margin-bottom:10px}
+        .concept-def{color:var(--text);margin-bottom:10px}
+        .concept-why{color:var(--muted);font-size:0.9rem;font-style:italic}
+        .playbook{padding:60px 0;background:var(--dark-2)}
+        .strategy-card{background:rgba(255,255,255,0.02);border-radius:16px;margin-bottom:25px;overflow:hidden;border:1px solid #333}
+        .strategy-header{padding:25px 30px;background:rgba(212,175,55,0.05);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s}
+        .strategy-header:hover{background:rgba(212,175,55,0.1)}
+        .strategy-header h3{color:var(--gold);font-size:1.3rem;font-weight:500}
+        .strategy-number{color:var(--muted);font-size:0.9rem}
+        .strategy-content{padding:30px;display:none}
+        .strategy-content.active{display:block}
+        .strategy-section{margin-bottom:25px}
+        .strategy-section h4{color:var(--gold-light);font-size:1rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+        .strategy-section p{color:var(--text);line-height:1.8}
+        .strategy-section ul{list-style:none;padding-left:0}
+        .strategy-section li{padding:8px 0;padding-left:25px;position:relative}
+        .strategy-section li::before{content:'•';position:absolute;left:10px;color:var(--gold)}
+        .risk-warning{background:rgba(180,50,50,0.1);border-left:3px solid #b43232;padding:15px 20px;border-radius:0 8px 8px 0;margin-top:15px}
+        .risk-warning strong{color:#ff6b6b}
+        .case-study{background:rgba(45,90,39,0.1);border-left:3px solid var(--accent);padding:20px;border-radius:0 8px 8px 0;margin-top:20px}
+        .case-study h4{color:var(--accent);margin-bottom:10px}
+        .jurisdictions{padding:60px 0}
+        .jurisdiction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;margin-top:30px}
+        .jurisdiction-card{background:rgba(255,255,255,0.02);border-radius:16px;padding:25px;border:1px solid #333;transition:all 0.3s}
+        .jurisdiction-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+        .jurisdiction-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+        .flag{width:50px;height:35px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+        .jurisdiction-name{font-size:1.2rem;font-weight:500}
+        .regime-name{color:var(--gold);font-size:0.95rem;margin-bottom:5px}
+        .rate-tag{display:inline-block;background:rgba(212,175,55,0.15);color:var(--gold);padding:5px 15px;border-radius:20px;font-size:0.85rem;font-weight:500;margin-bottom:15px}
+        .catch-section,.bestfor-section{margin-bottom:15px}
+        .catch-section h4,.bestfor-section h4{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+        .catch-section p{color:#ff8a8a;font-size:0.9rem}
+        .bestfor-section p{color:var(--text);font-size:0.9rem}
+        .navigation{background:var(--dark-2);padding:40px 0;border-top:1px solid #333}
+        .nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:20px}
+        .nav-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid #333;transition:all 0.3s}
+        .nav-card:hover{border-color:var(--gold);background:rgba(212,175,55,0.05)}
+        .nav-card.current{border-color:var(--gold);background:rgba(212,175,55,0.1)}
+        .nav-card .tier-num{color:var(--gold);font-size:0.8rem}
+        .nav-card .tier-name{font-weight:500;margin-top:5px}
+        .nav-card .tier-range{color:var(--muted);font-size:0.85rem}
+        .tooltip{position:relative;display:inline-block;border-bottom:1px dotted var(--gold);cursor:help}
+        .tooltip:hover::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:var(--dark-2);color:var(--text);padding:10px 15px;border-radius:8px;border:1px solid var(--gold);white-space:nowrap;z-index:100;font-size:0.85rem}
+        .cta-section{padding:60px 0;text-align:center;background:linear-gradient(135deg,var(--dark-2)0%,var(--dark)100%)}
+        .cta-button{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s}
+        .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,175,55,0.3)}
+        @media(max-width:768px){.tier-icon{display:none}.concept-grid,.jurisdiction-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="tier-badge">Wealth Tier 1 of 8: Escape</span>
+            <h1>Escape Tier — <span>$1M-$5M</span></h1>
+            <p class="hero-subtitle">The threshold of personal sovereignty: when your wealth justifies leaving high-tax jurisdictions for freedom-first alternatives.</p>
+            <svg class="tier-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="40" stroke="#d4af37"/>
+                <path d="M50 20 L50 50 L70 70" stroke="#d4af37"/>
+                <circle cx="50" cy="50" r="5" fill="#d4af37"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="snapshot">
+        <div class="container">
+            <h2 class="section-title">The <span>Snapshot</span></h2>
+            <p class="section-subtitle">What defines this tier in 30 seconds</p>
+            <div class="snapshot-grid">
+                <div class="snapshot-card">
+                    <h3>Defining Characteristics</h3>
+                    <ul>
+                        <li>Liquid wealth sufficient for relocation but not yet complex structuring</li>
+                        <li>Primary concern: reducing tax burden through jurisdictional change</li>
+                        <li>Personal freedom and lifestyle optimization drive decisions</li>
+                    </ul>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Typical Profile</h3>
+                    <p style="margin-bottom:15px">Tech professional post-IPO with $2.5M liquid, single, US citizen. Has experienced the shock of seeing 37% federal + 13.3% state taxation on stock option exercises. Exploring options before the next liquidity event.</p>
+                    <div class="complexity-indicator">
+                        <span>Complexity:</span>
+                        <div class="complexity-dots">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span>Entry Level</span>
+                    </div>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Key Transition</h3>
+                    <ul>
+                        <li>From: Tax resident of high-tax country (US, UK, Germany, France)</li>
+                        <li>To: Strategic resident of favorable jurisdiction</li>
+                        <li>Trigger: Realization that taxes exceed lifestyle costs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title">The <span>Architecture</span></h2>
+            <p class="section-subtitle">What changes at this level and why it matters</p>
+            
+            <div style="background:rgba(255,255,255,0.02);padding:30px;border-radius:16px;margin-bottom:40px;border:1px solid #333">
+                <h3 style="color:var(--gold);margin-bottom:15px">What Changes at This Level</h3>
+                <p style="line-height:1.9;color:var(--text)">At the $1M-$5M threshold, you cross an invisible line where the cost of remaining in a high-tax jurisdiction exceeds the cost of leaving it. For a US professional in California, this means paying over $200,000 annually in state and federal taxes on a $600,000 income—enough to fund a complete lifestyle in Portugal, Dubai, or Puerto Rico with money left over.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">The structural shift is psychological as much as financial: you begin to see yourself as a global citizen with options rather than a passive subject of your birth country's tax regime. This mindset shift—from "how do I optimize within the system" to "which system serves me best"—is the foundational architecture of all subsequent wealth preservation.</p>
+            </div>
+
+            <h3 style="margin-bottom:20px">Key Concepts You Must Understand</h3>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Foreign Earned Income Exclusion: US tax provision allowing citizens abroad to exclude foreign-earned income">FEIE</span></div>
+                    <div class="concept-def">Foreign Earned Income Exclusion allows qualifying US citizens to exclude up to $120,000 (2024) of foreign-earned income from US federal tax.</div>
+                    <div class="concept-why">Why it matters: Your first line of defense against double taxation while maintaining US citizenship.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Non-Habitual Resident: Portuguese tax regime offering reduced rates for new residents">NHR</span></div>
+                    <div class="concept-def">Portugal's Non-Habitual Resident regime offers reduced tax rates for 10 years, including potential 0% on foreign-sourced dividends and interest.</div>
+                    <div class="concept-why">Why it matters: The most accessible "golden ticket" for Americans seeking EU residency with tax advantages.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Physical Presence Test: Requires 330 full days outside the US in 12-month period">330-Day Rule</span></div>
+                    <div class="concept-def">To qualify for FEIE under the Physical Presence Test, you must be physically present in a foreign country for 330 full days during any 12-month period.</div>
+                    <div class="concept-why">Why it matters: One miscalculated day can cost you the entire exclusion. Precision is non-negotiable.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Bona Fide Residence Test: Establishing genuine residence in foreign country">Bona Fide Residence</span></div>
+                    <div class="concept-def">Alternative to the 330-day rule—establishing genuine residence in a foreign country with intent to remain indefinitely.</div>
+                    <div class="concept-why">Why it matters: More flexible than the 330-day rule but requires stronger documentation and commitment.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Double Tax Treaty: Agreement between countries to prevent double taxation">DTT</span></div>
+                    <div class="concept-def">Double Tax Treaties are bilateral agreements that determine which country has primary taxing rights on different types of income.</div>
+                    <div class="concept-why">Why it matters: Understanding treaty networks helps you structure income to minimize global tax liability.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Exit Tax: Tax imposed when giving up citizenship or long-term residency">Exit Tax</span></div>
+                    <div class="concept-def">The US imposes an exit tax on covered expatriates—those with $2M+ net worth or 5-year average tax liability exceeding $190,000.</div>
+                    <div class="concept-why">Why it matters: At this tier, you're approaching the threshold where renouncing citizenship triggers significant tax consequences.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="playbook">
+        <div class="container">
+            <h2 class="section-title">The <span>Playbook</span></h2>
+            <p class="section-subtitle">Six strategies for the Escape tier—expand each for execution details</p>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 01</span>
+                        <h3>FEIE Optimization Mastery</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>The Foreign Earned Income Exclusion is the most powerful tool available to US citizens seeking tax reduction without renouncing citizenship. Yet most who qualify fail to maximize it due to poor planning around the 330-day physical presence test or inadequate documentation for the bona fide residence test. This strategy transforms FEIE from a passive benefit into an actively managed tax position.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Establish a 12-month tracking period that aligns with your income timing—typically January to December or centered around your highest-income months</li>
+                            <li>Maintain a contemporaneous travel log with flight records, accommodation receipts, and passport stamps</li>
+                            <li>Structure earned income (salary, consulting, business profits) to qualify as "foreign-earned" through proper entity structuring</li>
+                            <li>Understand that investment income, dividends, and capital gains do NOT qualify for FEIE exclusion</li>
+                            <li>File Form 2555 with your tax return, including the Foreign Housing Exclusion for additional benefits</li>
+                            <li>Consider the Foreign Tax Credit for income exceeding the FEIE limit rather than double benefits</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> The IRS aggressively audits FEIE claims. One day miscounted can invalidate your entire exclusion. Maintain bulletproof documentation and consider professional tax preparation for the first two years.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Sarah Chen, Software Engineer</h4>
+                        <p>Sarah, a senior engineer at a SF-based tech company earning $350,000 annually, negotiated a remote-first arrangement and established residency in Lisbon. By qualifying for both FEIE ($120,000 exclusion) and the Foreign Housing Exclusion ($15,000), she reduced her federal tax liability from $98,000 to $42,000 annually—saving $56,000 per year while maintaining her US citizenship and job.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 02</span>
+                        <h3>Puerto Rico Act 60 Establishment</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Puerto Rico offers a unique proposition: 0% federal tax on Puerto Rico-sourced income for qualifying individuals who become bona fide residents. Unlike expatriation, you retain US citizenship and passport while achieving tax rates competitive with offshore jurisdictions. Act 60 (formerly Acts 20 and 22) is the legislative vehicle, but success requires genuine relocation and adherence to strict requirements.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Establish bona fide residence in Puerto Rico—this means being present for at least 183 days annually and demonstrating intent to remain</li>
+                            <li>Purchase real property in Puerto Rico within 2 years of establishing residency (required)</li>
+                            <li>Make annual charitable contributions of $5,000 to Puerto Rican nonprofits</li>
+                            <li>Apply for and receive a tax decree from the Puerto Rico government before the tax year begins</li>
+                            <li>Understand that only Puerto Rico-sourced income qualifies—US mainland income remains taxable by the IRS</li>
+                            <li>File annual reports demonstrating continued compliance with decree requirements</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> The IRS closely scrutinizes Puerto Rico residency claims. "Paper residency" without genuine presence and intent will be challenged. Additionally, the political stability of Puerto Rico's tax incentives is not guaranteed—legislative changes could alter the landscape.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Marcus Williams, Fintech Founder</h4>
+                        <p>Marcus sold his first startup for $8M and faced a $3M+ tax bill. Instead of paying, he relocated to Dorado, Puerto Rico, purchased a $1.2M condo, and established a service business sourcing income from his advisory work. Over five years, he saved approximately $1.8M in taxes while building his next venture from a tropical base with US infrastructure and legal protections.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 03</span>
+                        <h3>Portugal NHR Entry Strategy</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Portugal's Non-Habitual Resident regime is arguably the most attractive tax program for Americans seeking EU residency. For 10 years, qualifying individuals can benefit from 0% tax on foreign-sourced dividends and interest (if already taxed at source), 0% on foreign pension income, and a flat 20% rate on Portuguese-sourced employment and business income. Combined with Portugal's quality of life and EU access, it's the gateway drug to international tax optimization.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Establish Portuguese tax residency—typically requiring 183+ days in Portugal or having a habitual abode available</li>
+                            <li>Register as a tax resident and obtain a NIF (Portuguese tax number)</li>
+                            <li>Apply for NHR status by March 31 of the year following your first year of residence</li>
+                            <li>Demonstrate that you were not a Portuguese tax resident in the previous 5 years</li>
+                            <li>Structure your income sources to maximize NHR benefits—foreign dividends and interest are most advantageous</li>
+                            <li>Work with a Portuguese tax advisor to ensure proper registration and ongoing compliance</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> NHR was modified in 2024 to remove the 10-year pension income exemption. The regime remains under political pressure and could face further changes. Additionally, Portugal's wealth tax on real estate and the potential for a "solidarity tax" on high incomes must be factored into planning.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Elena Rodriguez, Marketing Executive</h4>
+                        <p>Elena, earning $400,000 annually from remote consulting work, relocated from New York to Lisbon. By qualifying for NHR, she pays 20% flat tax on her Portuguese-sourced business income (versus 35%+ in NY) and 0% on her US investment dividends. Her annual tax savings exceed $80,000, funding her children's international school tuition and leaving substantial surplus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 04</span>
+                        <h3>Digital Nomad Visa Arbitrage</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>The explosion of digital nomad visas has created a new category of "semi-residency"—formal legal status in favorable jurisdictions without full tax residency obligations. Countries from Estonia to Costa Rica to Croatia now offer 1-2 year renewable visas specifically for remote workers. For the Escape tier, this provides a structured way to test multiple jurisdictions before committing to a permanent move.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Research programs aligned with your income level, profession, and lifestyle preferences—Greece, Spain, and Estonia are particularly accessible</li>
+                            <li>Prepare documentation: proof of remote employment, minimum income requirements (typically $2,000-$5,000/month), health insurance, and clean criminal record</li>
+                            <li>Apply through consulates or online portals—processing times range from 2 weeks to 3 months</li>
+                            <li>Understand tax implications: most nomad visas don't automatically create tax residency, but extended stays may trigger it</li>
+                            <li>Use the visa period to evaluate the jurisdiction for potential permanent relocation</li>
+                            <li>Stack multiple nomad visas sequentially to maintain continuous legal status abroad</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Digital nomad visas are not tax residency solutions. Staying beyond 183 days in most countries will trigger tax residency regardless of visa type. Additionally, visa programs can be suspended or modified with little notice—never build a long-term strategy around a single nomad visa.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: David Park, UX Designer</h4>
+                        <p>David, earning $150,000 remotely, spent 18 months testing jurisdictions: 6 months in Croatia on their digital nomad visa, 6 months in Greece, and 6 months in Spain. This "jurisdiction dating" allowed him to experience tax systems, cost of living, and lifestyle factors before committing to Portuguese NHR. His total cost for the experiment was under $10,000 in visa and relocation expenses—cheap market research for a decision affecting millions in lifetime taxes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 05</span>
+                        <h3>Tax Treaty Shopping</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Double Tax Treaties (DTTs) create a complex web of agreements that determine which country has primary taxing rights on different income types. For the Escape tier, understanding this network allows strategic positioning to minimize withholding taxes on dividends, interest, and royalties. While sophisticated treaty shopping requires higher-tier structures, even individuals can benefit from treaty-aware residency decisions.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Map the treaty network between your income sources and potential residence countries</li>
+                            <li>Identify treaties with favorable dividend and interest withholding rates—the US-UK treaty, for example, reduces dividend withholding to 15%</li>
+                            <li>Understand the "Limitation on Benefits" clauses that prevent treaty abuse</li>
+                            <li>Structure investment holdings through treaty-favorable jurisdictions where appropriate</li>
+                            <li>Obtain Certificates of Residence to claim treaty benefits</li>
+                            <li>Work with tax advisors in both source and residence countries to ensure proper treaty application</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Treaty shopping without genuine substance is increasingly challenged by tax authorities. The OECD's Principal Purpose Test (PPT) allows denial of treaty benefits if obtaining those benefits was a principal purpose of an arrangement. Always ensure your treaty positions have genuine commercial substance.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Jennifer Walsh, Consultant</h4>
+                        <p>Jennifer receives $100,000 annually in dividends from a US corporation. As a US resident, these were taxed at ordinary income rates. By establishing UK residence (while maintaining US citizenship and using FEIE for earned income), she leveraged the US-UK tax treaty to reduce dividend withholding from 30% to 15%, saving $15,000 annually. Combined with the UK's dividend allowance, her effective tax rate on this income dropped by over 50%.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 06</span>
+                        <h3>Residency Diversification</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>At the Escape tier, your greatest asset is flexibility. Rather than committing to a single jurisdiction, maintain multiple residency options that can be activated based on changing circumstances—political shifts, tax law changes, family needs, or lifestyle preferences. This "residency portfolio" approach treats legal residence as an asset class to be diversified, not a binary status.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Establish primary residency in your most favorable current jurisdiction while maintaining secondary options</li>
+                            <li>Obtain permanent residency or citizenship through investment programs where capital permits—Malta, Greece, and Caribbean programs are accessible at this tier</li>
+                            <li>Maintain "ties" in multiple jurisdictions: bank accounts, property leases, social connections, and professional relationships</li>
+                            <li>Track days carefully in each jurisdiction to avoid unintentional tax residency triggers</li>
+                            <li>Review and refresh residency options annually—programs change, and your optimal jurisdiction may shift</li>
+                            <li>Document your "center of vital interests" to support your claimed tax residency if challenged</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Multiple residencies create complexity and potential for double taxation if not carefully managed. The "tie-breaker" rules in tax treaties may not always produce the result you expect. Professional guidance is essential when maintaining multiple residency connections.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Nakamura Family</h4>
+                        <p>Hiroshi, a Japanese-American dual citizen with $4M in assets, established a three-jurisdiction strategy: primary residence in Portugal (NHR), secondary residency in Japan (maintaining family ties), and a "bolt-hole" apartment in Singapore for Asia-Pacific business. This structure cost approximately $50,000 annually to maintain but provides optionality that proved invaluable when Portugal's NHR was modified—he was able to shift his tax center to Singapore within 90 days without disrupting his business or family life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jurisdictions">
+        <div class="container">
+            <h2 class="section-title">The <span>Jurisdictions</span></h2>
+            <p class="section-subtitle">Six programs accessible at the Escape tier—each with honest disclosure of drawbacks</p>
+
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇵🇹</div>
+                        <div>
+                            <div class="jurisdiction-name">Portugal</div>
+                            <div class="regime-name">Non-Habitual Resident (NHR)</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0-20% Effective Rate</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>NHR was modified in 2024; pension income no longer exempt. Political pressure may lead to further changes. Wealth tax on real estate applies. 10-year limit.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Americans seeking EU access, remote workers with foreign dividend/interest income, lifestyle-focused relocators who value culture and climate.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇦🇪</div>
+                        <div>
+                            <div class="jurisdiction-name">UAE</div>
+                            <div class="regime-name">Golden Visa Program</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% Personal Income Tax</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>9% corporate tax introduced in 2023. High cost of living in Dubai. Limited tax treaty network. Reputation concerns for some business contexts. Cultural adjustment required.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Crypto wealth, entrepreneurs seeking zero tax, those with Middle East business interests, individuals prioritizing maximum tax reduction over lifestyle amenities.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇲🇹</div>
+                        <div>
+                            <div class="jurisdiction-name">Malta</div>
+                            <div class="regime-name">Nomad Residence Permit</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">€300/year + Tax Treaty Access</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Does not provide tax residency—merely legal residence. Must still manage tax exposure elsewhere. Small island with limited infrastructure. High property costs.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Digital nomads seeking EU base, those testing Mediterranean lifestyle, individuals needing Schengen access for business travel, English-speaking environment.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇬🇷</div>
+                        <div>
+                            <div class="jurisdiction-name">Greece</div>
+                            <div class="regime-name">Digital Nomad Visa</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">50% Tax Reduction for 7 Years</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Bureaucratic application process. Requires proof of €3,500/month minimum income. Tax benefits require becoming Greek tax resident with 183+ days presence.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Mediterranean lifestyle seekers, those with EU business interests, individuals wanting to test Greece before permanent relocation, history and culture enthusiasts.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇨🇾</div>
+                        <div>
+                            <div class="jurisdiction-name">Cyprus</div>
+                            <div class="regime-name">Non-Dom Regime</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% on Dividends/Interest for 17 Years</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Geopolitical tensions with Northern Cyprus. Limited airline connections. Small domestic market. 60-day physical presence requirement for non-dom status.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Investment income recipients, those with Middle East/Eastern Europe business interests, individuals seeking EU access with lower costs than Western Europe.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇰🇾</div>
+                        <div>
+                            <div class="jurisdiction-name">Cayman Islands</div>
+                            <div class="regime-name">Residency by Investment</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% All Taxes</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Extremely high cost of living. $1.2M+ property investment required. Limited infrastructure. Hurricane risk. Isolation from major business centers. No tax treaties.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Ultra-high-net-worth individuals seeking maximum privacy, hedge fund managers, those with existing Caribbean business interests, privacy-focused wealth holders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom:20px">Ready to Calculate Your Optimal Strategy?</h2>
+            <p style="color:var(--muted);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto">Use our comprehensive calculator to compare jurisdictions, model tax scenarios, and identify your optimal wealth tier progression path.</p>
+            <a href="calculator.html" class="cta-button">Launch Wealth Calculator</a>
+        </div>
+    </section>
+
+    <section class="navigation">
+        <div class="container">
+            <h3 style="margin-bottom:20px;color:var(--muted);font-size:0.9rem;text-transform:uppercase;letter-spacing:1px">Explore All Wealth Tiers</h3>
+            <div class="nav-grid">
+                <a href="01-escape.html" class="nav-card current">
+                    <div class="tier-num">Tier 1</div>
+                    <div class="tier-name">Escape</div>
+                    <div class="tier-range">$1M - $5M</div>
+                </a>
+                <a href="02-foundations.html" class="nav-card">
+                    <div class="tier-num">Tier 2</div>
+                    <div class="tier-name">Foundations</div>
+                    <div class="tier-range">$5M - $20M</div>
+                </a>
+                <a href="03-optimization.html" class="nav-card">
+                    <div class="tier-num">Tier 3</div>
+                    <div class="tier-name">Structure</div>
+                    <div class="tier-range">$20M - $100M</div>
+                </a>
+                <a href="04-preservation.html" class="nav-card">
+                    <div class="tier-num">Tier 4</div>
+                    <div class="tier-name">Preservation</div>
+                    <div class="tier-range">$100M - $500M</div>
+                </a>
+                <a href="05-structures.html" class="nav-card">
+                    <div class="tier-num">Tier 5</div>
+                    <div class="tier-name">Structures</div>
+                    <div class="tier-range">$500M - $2B</div>
+                </a>
+                <a href="06-vehicles.html" class="nav-card">
+                    <div class="tier-num">Tier 6</div>
+                    <div class="tier-name">Vehicles</div>
+                    <div class="tier-range">$2B - $10B</div>
+                </a>
+                <a href="07-legacy.html" class="nav-card">
+                    <div class="tier-num">Tier 7</div>
+                    <div class="tier-name">Legacy</div>
+                    <div class="tier-range">$10B - $1T</div>
+                </a>
+                <a href="08-civilization.html" class="nav-card">
+                    <div class="tier-num">Tier 8</div>
+                    <div class="tier-name">Civilization</div>
+                    <div class="tier-range">$1T - $100T</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background:var(--dark);padding:40px 0;text-align:center;border-top:1px solid #333">
+        <div class="container">
+            <p style="color:var(--muted);font-size:0.9rem">Nomad Wealth Atlas — Educational content for global citizens. Not financial, tax, or legal advice.</p>
+            <p style="color:var(--muted);font-size:0.8rem;margin-top:10px">Consult qualified professionals before making any financial decisions.</p>
+        </div>
+    </footer>
+</body>
+</html>

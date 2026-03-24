@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nomad Wealth Atlas | Mission, Methodology & Editorial Standards</title>
+    <meta name="description" content="Learn about Nomad Wealth Atlas: our mission to provide verified tax and residency information for global citizens, our rigorous methodology, and editorial independence standards.">
+    <link rel="canonical" href="https://nomadwealthatlas.com/about.html">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Nomad Wealth Atlas",
+        "description": "Mission, methodology, and editorial standards of Nomad Wealth Atlas",
+        "url": "https://nomadwealthatlas.com/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Nomad Wealth Atlas",
+            "description": "Independent resource for verified tax and residency information",
+            "url": "https://nomadwealthatlas.com",
+            "sameAs": []
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #d69e2e;
+            --accent-light: #ecc94b;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --bg: #ffffff;
+            --bg-alt: #f7fafc;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        /* Navigation */
+        .nav {
+            background: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .nav-links a.active {
+            color: var(--accent-light);
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        /* Mission Statement */
+        .mission-box {
+            background: var(--bg-alt);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .mission-box p {
+            font-size: 1.125rem;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.8;
+        }
+        
+        /* Methodology Grid */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .method-card {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .method-card h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .method-card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Editorial Standards */
+        .standards-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .standards-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .standards-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .checkmark {
+            color: var(--success);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        /* AI Transparency Button */
+        .ai-transparency {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .ai-transparency h3 {
+            color: white;
+            margin: 0 0 0.75rem;
+        }
+        
+        .ai-transparency p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: white;
+            color: #764ba2;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Team Section */
+        .team-note {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        
+        .team-note h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .credentials-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .credentials-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .credentials-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--accent-light);
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 2.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Nomad Wealth Atlas</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="tiers.html">Wealth Tiers</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="now.html">Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <h1>About Nomad Wealth Atlas</h1>
+        <p>Independent, verified information for global citizens navigating tax and residency decisions.</p>
+    </header>
+
+    <main>
+        <!-- Mission Statement -->
+        <section class="section">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <div class="mission-box">
+                    <p>Nomad Wealth Atlas exists to cut through the noise of conflicting tax advice and marketing claims. We provide rigorously verified, jurisdiction-neutral information for location-independent professionals, entrepreneurs, and investors making high-stakes decisions about where to structure their lives and assets. Unlike commercial services that steer clients toward specific jurisdictions, we present facts—verified, cross-referenced, and regularly updated—so you can make decisions based on reality, not sales pitches.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="section">
+            <div class="container">
+                <h2>How We Verify Information</h2>
+                <p>Every data point on this site follows a rigorous verification protocol. We don't rely on secondhand reports or promotional materials.</p>
+                
+                <div class="method-grid">
+                    <div class="method-card">
+                        <h4><span class="icon">📚</span> Primary Sources</h4>
+                        <p>OECD tax databases, official government gazettes, bilateral treaty texts, and regulatory filings. We go to the source, not the summary.</p>
+                    </div>
+                    <div class="method-card">
+                        <h4><span class="icon">✓</span> Cross-Reference Rule</h4>
+                        <p>Every significant claim is verified against a minimum of three independent sources before publication.</p>
+                    </div>
+                    <div class="method-card">
+                        <h4><span class="icon">🔄</span> Update Cadence</h4>
+                        <p>Tax rates: Quarterly review. Regulatory changes: Monthly monitoring. Breaking developments: As they occur.</p>
+                    </div>
+                    <div class="method-card">
+                        <h4><span class="icon">👤</span> Expert Review</h4>
+                        <p>All content is reviewed by qualified tax professionals and legal experts before publication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Independence -->
+        <section class="section">
+            <div class="container">
+                <h2>Editorial Independence</h2>
+                <p>Our credibility depends on complete independence from the jurisdictions and services we cover.</p>
+                
+                <ul class="standards-list">
+                    <li>
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>No compensation from jurisdictions</strong> for favorable placement, ratings, or coverage
+                        </div>
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Affiliate relationships disclosed transparently</strong> where they exist (see individual pages)
+                        </div>
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>No pay-to-play content</strong>—jurisdictions cannot buy better reviews or placement
+                        </div>
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Editorial decisions</strong> are made independently of any commercial relationships
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- AI Transparency -->
+        <section class="section">
+            <div class="container">
+                <h2>AI Transparency</h2>
+                <p>We believe in being upfront about how technology contributes to this resource.</p>
+                
+                <div class="ai-transparency">
+                    <h3>How We Use AI</h3>
+                    <p>Artificial intelligence assists with research synthesis, content organization, and cross-referencing large datasets. However, all information is verified by human experts before publication, and we maintain full editorial control.</p>
+                    <a href="ai-transparency.html" class="btn-primary">View Full AI Transparency Report</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team & Credits -->
+        <section class="section">
+            <div class="container">
+                <h2>Team & Editorial Board</h2>
+                
+                <div class="team-note">
+                    <h4>Anonymous Expert Contributors</h4>
+                    <p>Our contributors include practicing tax attorneys, CPAs, and international tax specialists who prefer to remain anonymous due to professional constraints and privacy considerations. Their expertise spans:</p>
+                    <ul class="credentials-list">
+                        <li>OECD tax treaty interpretation and BEPS implementation</li>
+                        <li>US international tax and FATCA compliance</li>
+                        <li>EU tax directives and cross-border structuring</li>
+                        <li>Asian jurisdiction tax regimes and regulatory frameworks</li>
+                        <li>CRS compliance and reporting obligations</li>
+                    </ul>
+                </div>
+                
+                <div class="team-note" style="margin-top: 1.5rem;">
+                    <h4>Review Process</h4>
+                    <p>All content undergoes multi-stage review: initial research, cross-reference verification, expert legal review, and final editorial approval. This process ensures accuracy while maintaining the independence that makes this resource valuable.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="calculator.html">Tax Calculator</a></li>
+                        <li><a href="tiers.html">Wealth Tiers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="sources.html">Sources</a></li>
+                        <li><a href="now.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="ai-transparency.html">AI Transparency</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Nomad Wealth Atlas. Not financial or legal advice. Consult qualified professionals.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

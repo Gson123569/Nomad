@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure Tier — $20M-$100M | Nomad Wealth Atlas</title>
+    <meta name="description" content="Wealth Tier 3 of 8: Structure strategies for $20M-$100M. IP holding, CFC compliance, treaty network optimization, and family governance.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Structure Tier — $20M-$100M: Multi-Jurisdictional Optimization",
+        "description": "Wealth Tier 3 of 8: Structure strategies for $20M-$100M. IP holding, CFC compliance, treaty network optimization, and family governance.",
+        "author": {"@type": "Organization", "name": "Nomad Wealth Atlas"},
+        "publisher": {"@type": "Organization", "name": "Nomad Wealth Atlas"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is a CFC rule?", "acceptedAnswer": {"@type": "Answer", "text": "Controlled Foreign Corporation rules attribute the income of foreign subsidiaries to their parent or controlling shareholders, preventing deferral of taxation on foreign earnings."}},
+            {"@type": "Question", "name": "What is Permanent Establishment (PE) risk?", "acceptedAnswer": {"@type": "Answer", "text": "Permanent Establishment risk is the danger that business activities in a country create a taxable presence, subjecting profits to that country's corporate tax regardless of formal entity location."}},
+            {"@type": "Question", "name": "What is an IP holding structure?", "acceptedAnswer": {"@type": "Answer", "text": "An IP holding structure centralizes intellectual property ownership in a favorable jurisdiction, licensing it to operating subsidiaries and receiving royalty income with minimal taxation."}}
+        ]
+    }
+    </script>
+    <style>
+        :root{--gold:#d4af37;--gold-light:#f4e4a6;--dark:#0a0a0a;--dark-2:#1a1a1a;--text:#e0e0e0;--muted:#888;--accent:#2d5a27}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .hero{min-height:60vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--dark)0%,var(--dark-2)100%);position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(circle at 70% 50%,rgba(212,175,55,0.1)0%,transparent 60%)}
+        .hero-content{position:relative;z-index:1}
+        .tier-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:8px 20px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;margin-bottom:15px;line-height:1.2}
+        .hero h1 span{color:var(--gold);font-weight:500}
+        .hero-subtitle{font-size:1.3rem;color:var(--muted);max-width:600px;margin-bottom:30px}
+        .tier-icon{width:120px;height:120px;position:absolute;right:10%;top:50%;transform:translateY(-50%);opacity:0.3}
+        .snapshot{background:var(--dark-2);padding:40px 0;border-bottom:1px solid #333}
+        .snapshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:20px}
+        .snapshot-card{background:rgba(255,255,255,0.03);padding:25px;border-radius:12px;border-left:3px solid var(--gold)}
+        .snapshot-card h3{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+        .snapshot-card ul{list-style:none}
+        .snapshot-card li{padding:8px 0;padding-left:20px;position:relative}
+        .snapshot-card li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+        .complexity-indicator{display:flex;align-items:center;gap:10px;margin-top:15px}
+        .complexity-dots{display:flex;gap:5px}
+        .dot{width:12px;height:12px;border-radius:50%;background:#333}
+        .dot.active{background:var(--gold)}
+        .architecture{padding:60px 0}
+        .section-title{font-size:2rem;font-weight:300;margin-bottom:10px}
+        .section-title span{color:var(--gold)}
+        .section-subtitle{color:var(--muted);margin-bottom:40px}
+        .concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px;margin-top:30px}
+        .concept-card{background:rgba(255,255,255,0.02);padding:25px;border-radius:12px;border:1px solid #333;transition:all 0.3s}
+        .concept-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+        .concept-term{color:var(--gold);font-size:1.1rem;font-weight:500;margin-bottom:10px}
+        .concept-def{color:var(--text);margin-bottom:10px}
+        .concept-why{color:var(--muted);font-size:0.9rem;font-style:italic}
+        .playbook{padding:60px 0;background:var(--dark-2)}
+        .strategy-card{background:rgba(255,255,255,0.02);border-radius:16px;margin-bottom:25px;overflow:hidden;border:1px solid #333}
+        .strategy-header{padding:25px 30px;background:rgba(212,175,55,0.05);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s}
+        .strategy-header:hover{background:rgba(212,175,55,0.1)}
+        .strategy-header h3{color:var(--gold);font-size:1.3rem;font-weight:500}
+        .strategy-number{color:var(--muted);font-size:0.9rem}
+        .strategy-content{padding:30px;display:none}
+        .strategy-content.active{display:block}
+        .strategy-section{margin-bottom:25px}
+        .strategy-section h4{color:var(--gold-light);font-size:1rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+        .strategy-section p{color:var(--text);line-height:1.8}
+        .strategy-section ul{list-style:none;padding-left:0}
+        .strategy-section li{padding:8px 0;padding-left:25px;position:relative}
+        .strategy-section li::before{content:'•';position:absolute;left:10px;color:var(--gold)}
+        .risk-warning{background:rgba(180,50,50,0.1);border-left:3px solid #b43232;padding:15px 20px;border-radius:0 8px 8px 0;margin-top:15px}
+        .risk-warning strong{color:#ff6b6b}
+        .case-study{background:rgba(45,90,39,0.1);border-left:3px solid var(--accent);padding:20px;border-radius:0 8px 8px 0;margin-top:20px}
+        .case-study h4{color:var(--accent);margin-bottom:10px}
+        .jurisdictions{padding:60px 0}
+        .jurisdiction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;margin-top:30px}
+        .jurisdiction-card{background:rgba(255,255,255,0.02);border-radius:16px;padding:25px;border:1px solid #333;transition:all 0.3s}
+        .jurisdiction-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+        .jurisdiction-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+        .flag{width:50px;height:35px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+        .jurisdiction-name{font-size:1.2rem;font-weight:500}
+        .regime-name{color:var(--gold);font-size:0.95rem;margin-bottom:5px}
+        .rate-tag{display:inline-block;background:rgba(212,175,55,0.15);color:var(--gold);padding:5px 15px;border-radius:20px;font-size:0.85rem;font-weight:500;margin-bottom:15px}
+        .catch-section,.bestfor-section{margin-bottom:15px}
+        .catch-section h4,.bestfor-section h4{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+        .catch-section p{color:#ff8a8a;font-size:0.9rem}
+        .bestfor-section p{color:var(--text);font-size:0.9rem}
+        .navigation{background:var(--dark-2);padding:40px 0;border-top:1px solid #333}
+        .nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:20px}
+        .nav-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid #333;transition:all 0.3s}
+        .nav-card:hover{border-color:var(--gold);background:rgba(212,175,55,0.05)}
+        .nav-card.current{border-color:var(--gold);background:rgba(212,175,55,0.1)}
+        .nav-card .tier-num{color:var(--gold);font-size:0.8rem}
+        .nav-card .tier-name{font-weight:500;margin-top:5px}
+        .nav-card .tier-range{color:var(--muted);font-size:0.85rem}
+        .tooltip{position:relative;display:inline-block;border-bottom:1px dotted var(--gold);cursor:help}
+        .tooltip:hover::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:var(--dark-2);color:var(--text);padding:10px 15px;border-radius:8px;border:1px solid var(--gold);white-space:nowrap;z-index:100;font-size:0.85rem}
+        .cta-section{padding:60px 0;text-align:center;background:linear-gradient(135deg,var(--dark-2)0%,var(--dark)100%)}
+        .cta-button{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s}
+        .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,175,55,0.3)}
+        @media(max-width:768px){.tier-icon{display:none}.concept-grid,.jurisdiction-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="tier-badge">Wealth Tier 3 of 8: Structure</span>
+            <h1>Structure Tier — <span>$20M-$100M</span></h1>
+            <p class="hero-subtitle">The complexity threshold: when intellectual property, CFC rules, and multi-entity coordination become central to wealth preservation.</p>
+            <svg class="tier-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" stroke="#d4af37"/>
+                <circle cx="50" cy="50" r="20" stroke="#d4af37"/>
+                <line x1="50" y1="30" x2="50" y2="10" stroke="#d4af37"/>
+                <line x1="50" y1="70" x2="50" y2="90" stroke="#d4af37"/>
+                <line x1="30" y1="50" x2="10" y2="50" stroke="#d4af37"/>
+                <line x1="70" y1="50" x2="90" y2="50" stroke="#d4af37"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="snapshot">
+        <div class="container">
+            <h2 class="section-title">The <span>Snapshot</span></h2>
+            <p class="section-subtitle">What defines this tier in 30 seconds</p>
+            <div class="snapshot-grid">
+                <div class="snapshot-card">
+                    <h3>Defining Characteristics</h3>
+                    <ul>
+                        <li>Wealth sufficient for sophisticated multi-jurisdictional structures</li>
+                        <li>Intellectual property assets become significant portion of wealth</li>
+                        <li>Controlled Foreign Corporation (CFC) rules become a primary concern</li>
+                    </ul>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Typical Profile</h3>
+                    <p style="margin-bottom:15px">SaaS founder with $45M, intellectual property assets, expanding family. Has optimized personal tax and established basic holding structures but now faces the complexity of CFC attribution, IP valuation, and coordinating multiple operating entities across jurisdictions.</p>
+                    <div class="complexity-indicator">
+                        <span>Complexity:</span>
+                        <div class="complexity-dots">
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span>Advanced</span>
+                    </div>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Key Transition</h3>
+                    <ul>
+                        <li>From: Simple holding and personal optimization</li>
+                        <li>To: Coordinated multi-entity architecture</li>
+                        <li>Trigger: IP assets, multiple revenue streams, CFC exposure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title">The <span>Architecture</span></h2>
+            <p class="section-subtitle">What changes at this level and why it matters</p>
+            
+            <div style="background:rgba(255,255,255,0.02);padding:30px;border-radius:16px;margin-bottom:40px;border:1px solid #333">
+                <h3 style="color:var(--gold);margin-bottom:15px">What Changes at This Level</h3>
+                <p style="line-height:1.9;color:var(--text)">At $20M-$100M, you cross into territory where simple residency arbitrage and basic holding companies are insufficient. Your wealth likely includes significant intellectual property—software, patents, trademarks, or proprietary methodologies—that generates ongoing royalty income. You may have multiple operating entities in different jurisdictions. And you almost certainly face complex Controlled Foreign Corporation (CFC) rules that threaten to attribute foreign subsidiary income to you personally.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">The structural shift is from passive holding to active coordination. You need structures that not only hold assets but actively manage IP licensing, coordinate intercompany transactions, navigate CFC exemptions, and maintain the substance required to defend your positions. This is the tier where professional management of your wealth architecture becomes essential—you need a team, not just advisors.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">Family governance also emerges at this tier. With wealth at this scale, your family needs formal structures for decision-making, communication, and education. The informal conversations that sufficed at lower tiers must evolve into documented processes, family councils, and next-generation preparation programs.</p>
+            </div>
+
+            <h3 style="margin-bottom:20px">Key Concepts You Must Understand</h3>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Controlled Foreign Corporation: Foreign company controlled by domestic shareholders whose income may be attributed">CFC Rules</span></div>
+                    <div class="concept-def">CFC rules attribute the income of foreign-controlled subsidiaries to their parent or controlling shareholders, preventing indefinite deferral of taxation on foreign earnings.</div>
+                    <div class="concept-why">Why it matters: CFC rules can eliminate the tax benefits of offshore structures if not carefully navigated. Understanding exemptions is critical.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Permanent Establishment: Taxable presence in a country that subjects profits to local corporate tax">PE Risk</span></div>
+                    <div class="concept-def">Permanent Establishment is created when business activities in a country reach sufficient scale to create a taxable presence, subjecting profits to local corporate tax.</div>
+                    <div class="concept-why">Why it matters: Unintended PE can destroy carefully planned tax structures. Understanding PE thresholds and managing activities accordingly is essential.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Intellectual Property Holding Company: Entity that owns and licenses IP to operating subsidiaries">IP Holding</span></div>
+                    <div class="concept-def">An IP holding company centralizes intellectual property ownership in a favorable jurisdiction, licensing it to operating subsidiaries and receiving royalty income.</div>
+                    <div class="concept-why">Why it matters: Properly structured IP holding can shift profits to low-tax jurisdictions while maintaining operating substance where needed.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Transfer Pricing: Pricing of transactions between related entities must be at arm's length">Transfer Pricing</span></div>
+                    <div class="concept-def">Transfer pricing rules require that transactions between related entities be priced as if they were between unrelated parties—at arm's length.</div>
+                    <div class="concept-why">Why it matters: Aggressive transfer pricing is a primary target for tax authority challenge. Documentation and defensible methodologies are essential.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Economic Substance: Requirement for genuine economic activity to claim tax benefits">Economic Substance</span></div>
+                    <div class="concept-def">Economic substance requirements mandate that companies claiming tax benefits must demonstrate genuine economic activity—employees, premises, and decision-making in the jurisdiction.</div>
+                    <div class="concept-why">Why it matters: Post-BEPS, substance is the primary defense against tax authority challenge. Paper companies face denial of benefits and penalties.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Insurance Wrapper: Investment structure using life insurance for tax deferral">Insurance Wrapper</span></div>
+                    <div class="concept-def">Insurance wrappers are investment structures that use life insurance policies to hold assets, enabling tax-deferred growth and potentially tax-free distributions.</div>
+                    <div class="concept-why">Why it matters: Insurance wrappers can provide tax efficiency, asset protection, and simplified estate planning in a single structure.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="playbook">
+        <div class="container">
+            <h2 class="section-title">The <span>Playbook</span></h2>
+            <p class="section-subtitle">Six strategies for the Structure tier—expand each for execution details</p>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 01</span>
+                        <h3>IP Holding Structure Optimization</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Intellectual property is uniquely mobile among asset classes—it has no physical presence and its value is derived from legal rights that can be assigned to any jurisdiction. An IP holding structure centralizes ownership in a favorable jurisdiction (Ireland, Netherlands, Luxembourg, or Singapore), licenses the IP to operating subsidiaries, and receives royalty income with minimal taxation through participation exemptions, innovation boxes, or favorable royalty regimes.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Valuate existing IP through independent appraisal—this establishes basis for intercompany transactions</li>
+                            <li>Select IP holding jurisdiction based on your IP type and operating locations—Ireland's Knowledge Development Box offers 6.25% effective rate for qualifying IP</li>
+                            <li>Establish genuine substance in the IP holding jurisdiction: R&D activities, technical employees, decision-making</li>
+                            <li>Structure licensing agreements at arm's length with proper transfer pricing documentation</li>
+                            <li>Consider the Dutch Innovation Box (effective 7% rate) or Luxembourg's IP regime for qualifying assets</li>
+                            <li>Maintain ongoing R&D activities to support the IP's continued development and justify the structure</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> IP holding structures face intense scrutiny. The OECD's BEPS Action 5 targets harmful tax practices, and many historical IP regimes have been abolished or modified. Ensure your structure has genuine substance and commercial rationale beyond tax minimization.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Nexus Software Holdings</h4>
+                        <p>David Chen's SaaS company generated $8M annually in subscription revenue. By establishing an Irish IP holding company that owned the platform's core software and licensed it to operating subsidiaries in the US and Germany, he shifted approximately $5M of annual profit to Ireland. Under the Knowledge Development Box, this income is taxed at 6.25% versus 21% in the US and 30% in Germany. Annual tax savings exceed $1M, while the structure maintains full compliance with OECD guidelines through genuine R&D activities in Dublin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 02</span>
+                        <h3>CFC Compliance Navigation</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Controlled Foreign Corporation rules are designed to prevent taxpayers from indefinitely deferring tax on foreign earnings by holding them in low-tax subsidiaries. At this tier, CFC rules become a central concern—your foreign entities' income may be attributed to you personally regardless of whether distributions are made. Successful navigation requires understanding exemptions, managing ownership percentages, and structuring genuine business activities.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Map all applicable CFC regimes based on your tax residency and entity locations—US GILTI, UK CFC rules, EU ATAD</li>
+                            <li>Identify available exemptions: active business exemptions, de minimis thresholds, treaty exemptions</li>
+                            <li>Manage ownership percentages to avoid CFC triggers—some regimes apply only above 50% ownership</li>
+                            <li>Ensure foreign subsidiaries have genuine business purpose and substance beyond tax minimization</li>
+                            <li>Consider the US GILTI high-tax exclusion (90% of US corporate rate) for operating in higher-tax jurisdictions</li>
+                            <li>Maintain contemporaneous documentation of business purpose, decision-making, and economic substance</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> CFC rules are complex and vary significantly by jurisdiction. What avoids CFC treatment in one country may trigger it in another. Professional advice from specialists in each relevant jurisdiction is essential—errors can result in immediate tax liabilities, penalties, and interest.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: GlobalTech Navigation</h4>
+                        <p>Sarah's US-based software consultancy established a UK subsidiary to serve European clients. Initially structured as 100% owned, the subsidiary's profits were subject to US GILTI taxation at 10.5% regardless of distributions. By restructuring to 49% US ownership with a UK partner holding 51%, the subsidiary fell outside US CFC rules while Sarah maintained effective control through governance arrangements. The structure reduced effective tax on European earnings from 35.5% (GILTI + UK corporate) to 19% (UK corporate only), saving approximately $400,000 annually.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 03</span>
+                        <h3>Permanent Establishment Avoidance</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Permanent Establishment (PE) is created when business activities in a country reach sufficient scale to create a taxable presence. For companies with international operations, unintended PE can subject profits to corporate tax in jurisdictions where no formal entity exists—destroying carefully planned tax structures. PE avoidance requires understanding treaty thresholds, managing employee activities, and structuring contracts appropriately.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Understand PE thresholds in each jurisdiction where you have activities—typically 183+ days of employee presence or dependent agent authority</li>
+                            <li>Structure employee activities to avoid PE triggers: limit in-country presence, avoid contract conclusion authority</li>
+                            <li>Review and modify contracts to ensure they're not concluded in high-tax jurisdictions</li>
+                            <li>Consider service PE provisions in treaties—some create PE based solely on service provision duration</li>
+                            <li>Maintain contemporaneous records of employee locations, activities, and time spent in each jurisdiction</li>
+                            <li>Obtain advance rulings or confirmations from tax authorities in key jurisdictions where PE risk is significant</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> PE determination is fact-specific and subjective. Tax authorities may assert PE based on minimal activity, and disputes can take years to resolve. The cost of defending against PE assertions often exceeds the tax at stake. Proactive management is essential.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: ConsultCo PE Management</h4>
+                        <p>Michael's consulting firm had consultants working on-site at German client locations for extended periods. German tax authorities asserted that this created a service PE, subjecting €2M of fees to German corporate tax. By restructuring engagements to limit on-site presence to under 183 days per consultant per project, moving contract conclusion to the UK (where the company was resident), and implementing strict travel tracking, Michael eliminated PE exposure while maintaining client relationships. Annual German tax exposure of €600,000 was reduced to zero.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 04</span>
+                        <h3>Treaty Network Optimization</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>At this tier, treaty optimization moves from simple withholding tax reduction to comprehensive route planning. Your structures likely span multiple jurisdictions, and the path income takes from source to ultimate beneficiary determines the total tax burden. Sophisticated treaty optimization identifies the most favorable routes for each income type while ensuring compliance with Limitation on Benefits provisions and Principal Purpose Tests.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Map the complete treaty network including all your entity locations, income sources, and residence jurisdictions</li>
+                            <li>Identify the most favorable withholding tax rates for each income type through different treaty routes</li>
+                            <li>Understand Limitation on Benefits (LOB) clauses that restrict treaty access based on ownership or activities</li>
+                            <li>Ensure structures meet Principal Purpose Test (PPT) requirements—obtaining treaty benefits cannot be a principal purpose</li>
+                            <li>Consider the impact of the Multilateral Instrument (MLI) on your treaty positions—many treaties have been modified</li>
+                            <li>Obtain advance confirmations or rulings for complex treaty positions where uncertainty exists</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Treaty optimization is under intense international pressure. The OECD's BEPS project specifically targets treaty abuse, and tax authorities are increasingly denying benefits to structures they view as artificial. Always ensure genuine commercial substance and document non-tax business purposes.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: InvestHold Treaty Planning</h4>
+                        <p>Robert's investment holding structure received dividends from Brazilian, Indian, and Chinese portfolio companies. Direct withholding would have been 15-20%. By routing investments through a Dutch CV (which has favorable treaties with all three countries), withholding was reduced to 10-15%. The structure meets LOB requirements through genuine Dutch substance—a local director, quarterly board meetings in Amsterdam, and Dutch banking relationships. Annual withholding tax savings exceed $300,000 on $4M of dividend income.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 05</span>
+                        <h3>Family Governance Framework</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>At $20M-$100M, your family wealth requires formal governance structures. Informal conversations and ad-hoc decisions are no longer sufficient—you need documented processes for decision-making, communication protocols, next-generation education, and conflict resolution. Family governance is not about control but about preserving family harmony while managing complex wealth.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Establish a Family Council with defined membership, meeting schedules, and decision-making authority</li>
+                            <li>Create a Family Constitution documenting values, vision, and governance principles—non-legally binding but morally persuasive</li>
+                            <li>Develop next-generation education programs: financial literacy, wealth responsibility, family history</li>
+                            <li>Implement regular family meetings—annual for all members, quarterly for the council</li>
+                            <li>Establish conflict resolution mechanisms before conflicts arise: mediation procedures, voting protocols</li>
+                            <li>Consider a Family Office coordinator—even if not a full SFO, a dedicated professional managing family affairs</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Family governance structures can become bureaucratic and alienate family members if not implemented thoughtfully. Balance structure with flexibility, and ensure all voices are heard in the governance design process. Imposed structures often fail.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Williams Family Framework</h4>
+                        <p>The Williams family, with $65M from a manufacturing sale, implemented a comprehensive governance structure: a five-person Family Council (two parents, three adult children), annual family assemblies with professional development sessions, and a Family Constitution developed over six months of facilitated discussions. A part-time Family Office Coordinator manages day-to-day affairs. While initially met with skepticism, the structure has enabled the family to make complex decisions about a new investment opportunity within 30 days—a process that previously would have taken months of informal discussion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 06</span>
+                        <h3>Insurance Wrapper Implementation</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Insurance wrappers combine investment flexibility with insurance-based tax benefits. Assets are held within a life insurance policy, enabling tax-deferred growth and potentially tax-free distributions. For international investors, insurance wrappers offered in jurisdictions like Luxembourg, Singapore, and Liechtenstein provide additional benefits: multi-currency options, access to global investments, and simplified estate planning.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Select jurisdiction based on your tax residency and investment needs—Luxembourg for EU investors, Singapore for Asia-Pacific</li>
+                            <li>Choose between unit-linked (investment-focused) and whole life (protection-focused) structures based on your objectives</li>
+                            <li>Understand tax treatment in your jurisdiction of residence—some countries tax annual gains, others only at distribution</li>
+                            <li>Fund appropriately—insurance wrappers have minimum premiums that may be substantial (€250k+)</li>
+                            <li>Select underlying investments based on your risk tolerance and the wrapper's available options</li>
+                            <li>Plan distribution strategy—partial surrenders, policy loans, or full surrender each have different tax implications</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Insurance wrappers are complex products with significant fees and restrictions. Early surrender can result in substantial losses. Tax treatment varies dramatically by jurisdiction—what is tax-efficient in one country may be fully taxable in another. Professional advice is essential.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: Luxembourg Life Wrapper</h4>
+                        <p>Antoine, French resident with $35M, established a Luxembourg unit-linked life insurance policy with €10M initial premium. The wrapper holds a diversified portfolio of global equities and bonds. Under French tax law, gains are deferred until withdrawal, and partial surrenders benefit from favorable taxation (only gains portion is taxed). The structure also provides simplified estate planning—policy proceeds pass directly to beneficiaries without French succession formalities. Annual tax deferral benefits are estimated at €150,000+ compared to direct investment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jurisdictions">
+        <div class="container">
+            <h2 class="section-title">The <span>Jurisdictions</span></h2>
+            <p class="section-subtitle">Six programs accessible at the Structure tier—each with honest disclosure of drawbacks</p>
+
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇳🇱</div>
+                        <div>
+                            <div class="jurisdiction-name">Netherlands</div>
+                            <div class="regime-name">CV/BV Structure + Innovation Box</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">7% Effective on Qualifying IP</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Complex structuring requirements. Substance demands are high. Treaty benefits increasingly challenged. Anti-hybrid rules may limit benefits. Political pressure on tax avoidance.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>IP-intensive businesses, companies with European operations, those needing extensive treaty network access, R&D-focused enterprises.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇱🇺</div>
+                        <div>
+                            <div class="jurisdiction-name">Luxembourg</div>
+                            <div class="regime-name">SOPARFI + IP Regime</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% on Dividends/Capital Gains (Participation Exemption)</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>High establishment and maintenance costs. Strict substance requirements. EU pressure on tax practices. Limited to EU-facing structures. Complex regulatory environment.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>European holding companies, investment funds, IP holding with EU nexus, those seeking regulatory credibility and EU market access.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇮🇪</div>
+                        <div>
+                            <div class="jurisdiction-name">Ireland</div>
+                            <div class="regime-name">Knowledge Development Box</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">6.25% on Qualifying IP Income</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Strict nexus requirements—IP must be developed in Ireland. 12.5% standard corporate rate. OECD pressure on IP regimes. Limited to certain IP types. Substance demands.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Tech companies with genuine R&D, pharmaceutical IP, companies with Irish operations, those seeking English-speaking EU base.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇸🇬</div>
+                        <div>
+                            <div class="jurisdiction-name">Singapore</div>
+                            <div class="regime-name">Headquarters + IP Hub</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">5-17% (Territorial System + Incentives)</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Strict substance requirements for IP. High cost of living and operations. Limited treaty network compared to EU. Political environment may shift. Regional competition increasing.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Asia-Pacific regional headquarters, IP with Asian market focus, those seeking territorial taxation, families prioritizing education and safety.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇦🇪</div>
+                        <div>
+                            <div class="jurisdiction-name">UAE</div>
+                            <div class="regime-name">ADGM Free Zone</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">0% Corporate Tax (Qualifying Activities)</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>9% corporate tax introduced in 2023 (though free zones may qualify for 0%). Limited treaty network. Reputation concerns. Geopolitical considerations. Substance requirements increasing.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Middle East operations, crypto and fintech ventures, those seeking zero tax with regulatory credibility, families with regional business interests.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇲🇹</div>
+                        <div>
+                            <div class="jurisdiction-name">Malta</div>
+                            <div class="regime-name">Participation Exemption + Refund</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">Effective 0-5% on Dividends</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>EU pressure on refund system. Complex tax refund process. Substance requirements. Small market with limited infrastructure. Reputation concerns in some contexts.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>EU holding companies, those seeking lowest effective EU corporate rate, English-speaking environment, Mediterranean location with EU access.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom:20px">Ready to Calculate Your Optimal Strategy?</h2>
+            <p style="color:var(--muted);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto">Use our comprehensive calculator to compare jurisdictions, model tax scenarios, and identify your optimal wealth tier progression path.</p>
+            <a href="calculator.html" class="cta-button">Launch Wealth Calculator</a>
+        </div>
+    </section>
+
+    <section class="navigation">
+        <div class="container">
+            <h3 style="margin-bottom:20px;color:var(--muted);font-size:0.9rem;text-transform:uppercase;letter-spacing:1px">Explore All Wealth Tiers</h3>
+            <div class="nav-grid">
+                <a href="01-escape.html" class="nav-card">
+                    <div class="tier-num">Tier 1</div>
+                    <div class="tier-name">Escape</div>
+                    <div class="tier-range">$1M - $5M</div>
+                </a>
+                <a href="02-foundations.html" class="nav-card">
+                    <div class="tier-num">Tier 2</div>
+                    <div class="tier-name">Foundations</div>
+                    <div class="tier-range">$5M - $20M</div>
+                </a>
+                <a href="03-optimization.html" class="nav-card current">
+                    <div class="tier-num">Tier 3</div>
+                    <div class="tier-name">Structure</div>
+                    <div class="tier-range">$20M - $100M</div>
+                </a>
+                <a href="04-preservation.html" class="nav-card">
+                    <div class="tier-num">Tier 4</div>
+                    <div class="tier-name">Preservation</div>
+                    <div class="tier-range">$100M - $500M</div>
+                </a>
+                <a href="05-structures.html" class="nav-card">
+                    <div class="tier-num">Tier 5</div>
+                    <div class="tier-name">Structures</div>
+                    <div class="tier-range">$500M - $2B</div>
+                </a>
+                <a href="06-vehicles.html" class="nav-card">
+                    <div class="tier-num">Tier 6</div>
+                    <div class="tier-name">Vehicles</div>
+                    <div class="tier-range">$2B - $10B</div>
+                </a>
+                <a href="07-legacy.html" class="nav-card">
+                    <div class="tier-num">Tier 7</div>
+                    <div class="tier-name">Legacy</div>
+                    <div class="tier-range">$10B - $1T</div>
+                </a>
+                <a href="08-civilization.html" class="nav-card">
+                    <div class="tier-num">Tier 8</div>
+                    <div class="tier-name">Civilization</div>
+                    <div class="tier-range">$1T - $100T</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background:var(--dark);padding:40px 0;text-align:center;border-top:1px solid #333">
+        <div class="container">
+            <p style="color:var(--muted);font-size:0.9rem">Nomad Wealth Atlas — Educational content for global citizens. Not financial, tax, or legal advice.</p>
+            <p style="color:var(--muted);font-size:0.8rem;margin-top:10px">Consult qualified professionals before making any financial decisions.</p>
+        </div>
+    </footer>
+</body>
+</html>

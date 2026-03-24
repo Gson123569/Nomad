@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Optimization Calculator | Nomad Wealth Atlas</title>
+    <meta name="description" content="Calculate your tax optimization potential. Compare effective tax rates across UAE, Portugal NHR, Singapore, Switzerland, Malta, and Cayman.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c9a227;
+            --accent-light: #d4b43a;
+            --success: #38a169;
+            --danger: #e53e3e;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: var(--primary);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Calculator Container */
+        .calculator-section {
+            max-width: 1200px;
+            margin: -2rem auto 4rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .calculator-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        
+        /* Left Panel - Inputs */
+        .input-panel {
+            padding: 2.5rem;
+            border-right: 1px solid var(--border);
+        }
+        
+        .panel-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.75rem;
+        }
+        
+        .input-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            cursor: help;
+            font-weight: 600;
+        }
+        
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            white-space: nowrap;
+            z-index: 100;
+            margin-bottom: 8px;
+            min-width: 200px;
+            white-space: normal;
+            text-align: center;
+        }
+        
+        .tooltip:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--primary);
+            margin-bottom: -4px;
+        }
+        
+        .income-display {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .slider-container {
+            position: relative;
+            margin: 1rem 0;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--progress, 0%), var(--border) var(--progress, 0%), var(--border) 100%);
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        select, input[type="text"] {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: white;
+            transition: border-color 0.2s;
+        }
+        
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .income-type-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .income-type-option {
+            position: relative;
+        }
+        
+        .income-type-option input {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .income-type-option label {
+            display: block;
+            padding: 0.875rem;
+            text-align: center;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .income-type-option input:checked + label {
+            border-color: var(--accent);
+            background: rgba(201, 162, 39, 0.1);
+            color: var(--primary);
+        }
+        
+        .income-type-option label:hover {
+            border-color: var(--accent-light);
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .calculate-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Right Panel - Results */
+        .results-panel {
+            padding: 2.5rem;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+        
+        .savings-highlight {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--success) 0%, #2f855a 100%);
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .savings-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .savings-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comparison-item {
+            padding: 1.25rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .comparison-item.current {
+            border-left: 4px solid var(--danger);
+        }
+        
+        .comparison-item.optimized {
+            border-left: 4px solid var(--success);
+        }
+        
+        .comparison-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .comparison-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .comparison-rate {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        .lifetime-savings {
+            padding: 1.25rem;
+            background: var(--primary);
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .lifetime-savings-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+        
+        .lifetime-savings-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        
+        .lifetime-note {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 0.25rem;
+        }
+        
+        .methodology-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .methodology-link:hover {
+            color: var(--primary);
+        }
+        
+        /* Assumptions */
+        .assumptions {
+            padding: 1.5rem 2.5rem;
+            background: #fffbeb;
+            border-top: 1px solid var(--border);
+        }
+        
+        .assumptions-title {
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .assumptions-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+        
+        .assumptions-list li {
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+        
+        .assumptions-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .assumptions-list .acronym {
+            font-weight: 600;
+            border-bottom: 1px dotted #92400e;
+            cursor: help;
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            padding: 0.25rem;
+        }
+        
+        .modal-close:hover {
+            color: var(--text);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+        
+        .modal-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .modal-section h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .modal-section p {
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .formula-box {
+            background: #f7fafc;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        
+        /* Explanation Section */
+        .explanation-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .explanation-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        
+        .explanation-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .explanation-card p {
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--primary-light);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+        
+        .expand-btn:hover {
+            color: var(--primary);
+        }
+        
+        .expand-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .expand-content.active {
+            display: block;
+        }
+        
+        .expand-icon {
+            transition: transform 0.2s;
+        }
+        
+        .expand-btn.active .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f7fafc;
+        }
+        
+        .jurisdiction-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .tax-rate {
+            font-weight: 600;
+        }
+        
+        .tax-rate.zero {
+            color: var(--success);
+        }
+        
+        .tax-rate.low {
+            color: #38a169;
+        }
+        
+        .tax-rate.medium {
+            color: #d69e2e;
+        }
+        
+        .tax-rate.high {
+            color: var(--danger);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.2s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-mobile-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .input-panel {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .explanation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .income-type-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .input-panel,
+            .results-panel {
+                padding: 1.5rem;
+            }
+            
+            .savings-amount {
+                font-size: 1.75rem;
+            }
+            
+            .comparison-value {
+                font-size: 1.25rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+        }
+        
+        /* Schema markup hidden */
+        .schema-markup {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Nomad <span>Wealth</span> Atlas</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tier1-uae.html">UAE</a></li>
+                <li><a href="tier2-portugal.html">Portugal NHR</a></li>
+                <li><a href="tier3-singapore.html">Singapore</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+            </ul>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Calculate Your Tax Optimization Potential</h1>
+        <p>Compare effective tax rates across jurisdictions and discover how much you could save with strategic tax planning</p>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="calculator-card">
+            <div class="calculator-grid">
+                <!-- Left Panel - Inputs -->
+                <div class="input-panel">
+                    <h2 class="panel-title">Your Information</h2>
+                    
+                    <div class="input-group">
+                        <label class="input-label">
+                            Annual Income
+                            <span class="tooltip" data-tooltip="Pre-tax global income including capital gains, dividends, and employment income">?</span>
+                        </label>
+                        <div class="income-display" id="incomeDisplay">$500,000</div>
+                        <div class="slider-container">
+                            <input type="range" id="incomeSlider" min="0" max="100" value="35">
+                            <div class="slider-labels">
+                                <span>$100K</span>
+                                <span>$1M</span>
+                                <span>$10M</span>
+                                <span>$100M</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label class="input-label">
+                            Current Domicile
+                            <span class="tooltip" data-tooltip="Your permanent legal home, distinct from residency. Determines your tax obligations in most countries.">?</span>
+                        </label>
+                        <select id="currentDomicile">
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="germany">Germany</option>
+                            <option value="france">France</option>
+                            <option value="canada">Canada</option>
+                            <option value="australia">Australia</option>
+                            <option value="netherlands">Netherlands</option>
+                            <option value="italy">Italy</option>
+                            <option value="spain">Spain</option>
+                            <option value="switzerland">Switzerland</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label class="input-label">
+                            Target Jurisdiction
+                            <span class="tooltip" data-tooltip="The country where you plan to establish tax residency">?</span>
+                        </label>
+                        <select id="targetJurisdiction">
+                            <option value="uae">UAE (Dubai)</option>
+                            <option value="portugal">Portugal NHR</option>
+                            <option value="singapore">Singapore</option>
+                            <option value="switzerland">Switzerland</option>
+                            <option value="malta">Malta</option>
+                            <option value="cayman">Cayman Islands</option>
+                            <option value="monaco">Monaco</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label class="input-label">
+                            Income Type
+                            <span class="tooltip" data-tooltip="Different income types are taxed at different rates in most jurisdictions">?</span>
+                        </label>
+                        <div class="income-type-options">
+                            <div class="income-type-option">
+                                <input type="radio" name="incomeType" id="typeEmployment" value="employment" checked>
+                                <label for="typeEmployment">Employment</label>
+                            </div>
+                            <div class="income-type-option">
+                                <input type="radio" name="incomeType" id="typeCapitalGains" value="capitalgains">
+                                <label for="typeCapitalGains">Capital Gains</label>
+                            </div>
+                            <div class="income-type-option">
+                                <input type="radio" name="incomeType" id="typeDividends" value="dividends">
+                                <label for="typeDividends">Dividends</label>
+                            </div>
+                            <div class="income-type-option">
+                                <input type="radio" name="incomeType" id="typeMixed" value="mixed">
+                                <label for="typeMixed">Mixed</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="calculate-btn" id="calculateBtn">Calculate Savings</button>
+                </div>
+                
+                <!-- Right Panel - Results -->
+                <div class="results-panel">
+                    <h2 class="panel-title">Your Results</h2>
+                    
+                    <div class="savings-highlight">
+                        <div class="savings-label">Annual Tax Savings</div>
+                        <div class="savings-amount" id="annualSavings">$175,000</div>
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="comparison-item current">
+                            <div class="comparison-label">Current Tax Burden</div>
+                            <div class="comparison-value" id="currentTax">$200,000</div>
+                            <div class="comparison-rate" id="currentRate">Effective Rate: 40%</div>
+                        </div>
+                        <div class="comparison-item optimized">
+                            <div class="comparison-label">Optimized Tax Burden</div>
+                            <div class="comparison-value" id="optimizedTax">$25,000</div>
+                            <div class="comparison-rate" id="optimizedRate">Effective Rate: 5%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="lifetime-savings">
+                        <div class="lifetime-savings-label">30-Year Lifetime Savings</div>
+                        <div class="lifetime-savings-value" id="lifetimeSavings">$5,250,000</div>
+                        <div class="lifetime-note">Assumes constant income and tax rates</div>
+                    </div>
+                    
+                    <a class="methodology-link" id="methodologyLink">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4M12 8h.01"></path>
+                        </svg>
+                        View Methodology
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Assumptions -->
+            <div class="assumptions">
+                <div class="assumptions-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Important Assumptions
+                </div>
+                <ul class="assumptions-list">
+                    <li>Assumes no <span class="acronym" title="Permanent Establishment: A fixed place of business that creates tax liability in a country">PE</span> (Permanent Establishment) in high-tax country</li>
+                    <li>Assumes <span class="acronym" title="Controlled Foreign Corporation: Rules that attribute foreign company income to domestic shareholders">CFC</span> rules avoided through substance requirements</li>
+                    <li>Assumes compliance with <span class="acronym" title="Common Reporting Standard: Automatic exchange of financial account information between tax authorities">CRS</span> and <span class="acronym" title="Foreign Account Tax Compliance Act: US law requiring foreign banks to report US account holders">FATCA</span> reporting requirements</li>
+                    <li>Results are estimates; consult a qualified tax professional before making decisions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explanation Section -->
+    <section class="explanation-section">
+        <h2 class="section-title">Understanding Tax Optimization</h2>
+        
+        <div class="explanation-grid">
+            <!-- Article 1 -->
+            <article class="explanation-card">
+                <h3>Why Effective Tax Rate Matters</h3>
+                <p>Most people focus on marginal tax rates—the rate applied to your last dollar earned. But the effective tax rate tells the real story of your tax burden. It's the percentage of your total income that you actually pay in taxes.</p>
+                <p>For example, someone in a 37% marginal bracket might only pay 25% effective rate due to deductions, progressive brackets, and capital gains preferences.</p>
+                <button class="expand-btn" data-expand="mathExpand">
+                    See the Math
+                    <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="expand-content" id="mathExpand">
+                    <div class="formula-box">
+                        Effective Rate = (Total Tax Paid / Total Income) × 100
+                    </div>
+                    <p><strong>Example:</strong> If you earn $500,000 and pay $125,000 in taxes:</p>
+                    <p>Effective Rate = ($125,000 / $500,000) × 100 = <strong>25%</strong></p>
+                    <p>Even if your top marginal rate is 37%, your effective rate shows what you actually keep.</p>
+                </div>
+            </article>
+            
+            <!-- Article 2 -->
+            <article class="explanation-card">
+                <h3>The 183-Day Rule Explained</h3>
+                <p>The 183-day rule is the most common test for determining tax residency. Spend more than 183 days (half the year plus one day) in a country, and you typically become a tax resident there.</p>
+                <p>However, many countries have additional tests. Some use a 90-day threshold, while others consider factors like permanent home, center of vital interests, and habitual abode.</p>
+                <button class="expand-btn" data-expand="dayRuleExpand">
+                    Physical Presence Tests
+                    <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="expand-content" id="dayRuleExpand">
+                    <p><strong>Common Day Count Rules:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>183+ days:</strong> Tax residency triggered in most countries</li>
+                        <li><strong>90 days:</strong> Used by some jurisdictions for specific tests</li>
+                        <li><strong>Substantial Presence Test (US):</strong> Complex formula counting days over 3 years</li>
+                        <li><strong>OECD Tie-Breaker:</strong> Permanent home, vital interests, habitual abode</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">Always track your days carefully and maintain documentation of travel.</p>
+                </div>
+            </article>
+            
+            <!-- Article 3 -->
+            <article class="explanation-card">
+                <h3>Understanding CFC Rules</h3>
+                <p><span class="acronym" title="Controlled Foreign Corporation">CFC</span> rules are designed to prevent tax deferral by attributing income from foreign subsidiaries to domestic shareholders. If you own more than 50% of a foreign company, many countries will tax you on its profits immediately.</p>
+                <p>To avoid CFC issues, you need to demonstrate real substance in your offshore structure—actual offices, employees, and decision-making in the jurisdiction.</p>
+                <button class="expand-btn" data-expand="cfcExpand">
+                    Maintaining Substance
+                    <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="expand-content" id="cfcExpand">
+                    <p><strong>Key Substance Requirements:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Physical office space in the jurisdiction</li>
+                        <li>Local directors and employees</li>
+                        <li>Board meetings held locally</li>
+                        <li>Bank accounts in local banks</li>
+                        <li>Decision-making occurs in the jurisdiction</li>
+                        <li>Proper documentation of all activities</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">Without substance, tax authorities may disregard your offshore structure entirely.</p>
+                </div>
+            </article>
+            
+            <!-- Article 4 -->
+            <article class="explanation-card">
+                <h3>Double Taxation Treaties (DTT)</h3>
+                <p><span class="acronym" title="Double Taxation Treaty">DTTs</span> are agreements between countries that prevent the same income from being taxed twice. They determine which country has the primary right to tax different types of income and set maximum withholding rates.</p>
+                <p>When you have ties to multiple countries, DTTs include tie-breaker rules to determine your tax residency and prevent conflicts between jurisdictions.</p>
+                <button class="expand-btn" data-expand="dttExpand">
+                    Tie-Breaker Rules
+                    <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="expand-content" id="dttExpand">
+                    <p><strong>OECD Tie-Breaker Hierarchy:</strong></p>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>Permanent home:</strong> Where do you own/rent a home?</li>
+                        <li><strong>Center of vital interests:</strong> Where are your personal and economic ties strongest?</li>
+                        <li><strong>Habitual abode:</strong> Where do you regularly live?</li>
+                        <li><strong>Nationality:</strong> Which country's citizen are you?</li>
+                        <li><strong>Mutual agreement:</strong> Tax authorities negotiate</li>
+                    </ol>
+                    <p style="margin-top: 1rem;">Understanding these rules helps you plan your residency strategically.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Jurisdiction Comparison Table -->
+    <section class="comparison-section">
+        <h2 class="section-title">Jurisdiction Comparison</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Jurisdiction</th>
+                    <th>Personal Income Tax</th>
+                    <th>Corporate Tax</th>
+                    <th>VAT/GST</th>
+                    <th>Key Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="jurisdiction-name">UAE (Dubai)</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td class="tax-rate low">5%</td>
+                    <td>9% corporate only above AED 375K</td>
+                </tr>
+                <tr>
+                    <td class="jurisdiction-name">Portugal NHR</td>
+                    <td class="tax-rate medium">20% flat*</td>
+                    <td class="tax-rate medium">21%</td>
+                    <td class="tax-rate medium">23%</td>
+                    <td>*On Portuguese income; 0% on qualifying foreign income</td>
+                </tr>
+                <tr>
+                    <td class="jurisdiction-name">Singapore</td>
+                    <td class="tax-rate medium">0-24%</td>
+                    <td class="tax-rate low">17%</td>
+                    <td class="tax-rate medium">9%</td>
+                    <td>Territorial system; foreign-sourced income exempt</td>
+                </tr>
+                <tr>
+                    <td class="jurisdiction-name">Switzerland</td>
+                    <td class="tax-rate medium">0-11.5% + cantonal</td>
+                    <td class="tax-rate low">8.5% federal</td>
+                    <td class="tax-rate medium">8.1%</td>
+                    <td>Cantonal rates vary significantly (0-30%)</td>
+                </tr>
+                <tr>
+                    <td class="jurisdiction-name">Malta</td>
+                    <td class="tax-rate high">0-35%</td>
+                    <td class="tax-rate low">35%**</td>
+                    <td class="tax-rate medium">18%</td>
+                    <td>**Full imputation; effective rate ~5%</td>
+                </tr>
+                <tr>
+                    <td class="jurisdiction-name">Cayman Islands</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td>No direct taxes of any kind</td>
+                </tr>
+                <tr>
+                    <td class="jurisdiction-name">Monaco</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td class="tax-rate zero">0%</td>
+                    <td class="tax-rate medium">20%</td>
+                    <td>French nationals excluded from 0% rate</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tier1-uae.html">UAE Tier 1</a></li>
+                    <li><a href="tier2-portugal.html">Portugal NHR</a></li>
+                    <li><a href="tier3-singapore.html">Singapore</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="calculator.html">Tax Calculator</a></li>
+                    <li><a href="tier4-switzerland.html">Switzerland</a></li>
+                    <li><a href="tier5-malta.html">Malta</a></li>
+                    <li><a href="tier6-caribbean.html">Caribbean</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nomad Wealth Atlas. This calculator provides estimates only. Consult a qualified tax professional before making decisions.</p>
+        </div>
+    </footer>
+
+    <!-- Methodology Modal -->
+    <div class="modal-overlay" id="methodologyModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Calculation Methodology</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>How Calculations Work</h3>
+                    <p>Our calculator uses jurisdiction-specific tax brackets, rates, and rules to estimate your tax burden. For current domiciles, we apply progressive tax systems with standard deductions. For target jurisdictions, we apply their specific regimes including special programs like Portugal's NHR.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Marginal vs Effective Tax Rates</h3>
+                    <p><strong>Marginal rate</strong> is the tax on your last dollar earned. <strong>Effective rate</strong> is your total tax divided by total income. Progressive systems mean your effective rate is always lower than your top marginal rate.</p>
+                    <div class="formula-box">
+                        Effective Rate = (Total Tax / Total Income) × 100
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Jurisdiction-Specific Rules</h3>
+                    <p><strong>UAE:</strong> 0% personal income tax, 9% corporate only above AED 375,000 threshold.</p>
+                    <p><strong>Portugal NHR:</strong> 20% flat on Portuguese income, 0% on qualifying foreign income (dividends, interest, royalties).</p>
+                    <p><strong>Singapore:</strong> Territorial system taxes only Singapore-sourced income. Top rate 24%.</p>
+                    <p><strong>Switzerland:</strong> Federal + cantonal + municipal rates. Effective rates vary 15-35% depending on canton.</p>
+                    <p><strong>Malta:</strong> Full imputation system means shareholders receive credit for corporate tax paid.</p>
+                    <p><strong>Cayman/Monaco:</strong> No personal or corporate income taxes.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Important Limitations</h3>
+                    <p>This calculator provides estimates only. Actual tax liability depends on many factors including: specific deductions available, treaty provisions, CFC rules, exit taxes when leaving your current jurisdiction, and changing tax laws. Always consult a qualified tax advisor before making decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json" class="schema-markup">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Calculate Your Tax Optimization Potential",
+        "description": "Compare effective tax rates across jurisdictions to discover potential savings",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Enter Your Annual Income",
+                "text": "Input your pre-tax global income including capital gains, dividends, and employment income",
+                "url": "https://nomadwealthatlas.com/calculator.html#step1"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Select Your Current Domicile",
+                "text": "Choose your permanent legal home country which determines your current tax obligations",
+                "url": "https://nomadwealthatlas.com/calculator.html#step2"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Choose Target Jurisdiction",
+                "text": "Select the country where you plan to establish tax residency for comparison",
+                "url": "https://nomadwealthatlas.com/calculator.html#step3"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Select Income Type",
+                "text": "Specify whether your income is from employment, capital gains, dividends, or mixed sources",
+                "url": "https://nomadwealthatlas.com/calculator.html#step4"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Review Your Results",
+                "text": "Compare your current and optimized tax burden, annual savings, and lifetime projection",
+                "url": "https://nomadwealthatlas.com/calculator.html#step5"
+            }
+        ],
+        "tool": {
+            "@type": "HowToTool",
+            "name": "Nomad Wealth Atlas Tax Calculator"
+        }
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Tax rate data for jurisdictions
+        const taxData = {
+            us: {
+                name: 'United States',
+                brackets: [
+                    { limit: 11600, rate: 0.10 },
+                    { limit: 47150, rate: 0.12 },
+                    { limit: 100525, rate: 0.22 },
+                    { limit: 191950, rate: 0.24 },
+                    { limit: 243725, rate: 0.32 },
+                    { limit: 609350, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ],
+                capitalGains: [
+                    { limit: 47025, rate: 0.0 },
+                    { limit: 518900, rate: 0.15 },
+                    { limit: Infinity, rate: 0.20 }
+                ],
+                dividends: [
+                    { limit: 47025, rate: 0.0 },
+                    { limit: 518900, rate: 0.15 },
+                    { limit: Infinity, rate: 0.20 }
+                ],
+                niit: 0.038 // Net Investment Income Tax
+            },
+            uk: {
+                name: 'United Kingdom',
+                brackets: [
+                    { limit: 12570, rate: 0.0 },
+                    { limit: 50270, rate: 0.20 },
+                    { limit: 125140, rate: 0.40 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                capitalGains: [
+                    { limit: 3000, rate: 0.0 },
+                    { limit: 50000, rate: 0.10 },
+                    { limit: Infinity, rate: 0.20 }
+                ],
+                dividends: [
+                    { limit: 500, rate: 0.0 },
+                    { limit: 50000, rate: 0.875 },
+                    { limit: Infinity, rate: 0.3935 }
+                ]
+            },
+            germany: {
+                name: 'Germany',
+                brackets: [
+                    { limit: 11604, rate: 0.0 },
+                    { limit: 66760, rate: 0.14 },
+                    { limit: 277825, rate: 0.24 },
+                    { limit: Infinity, rate: 0.42 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.26375 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.26375 }
+                ]
+            },
+            france: {
+                name: 'France',
+                brackets: [
+                    { limit: 11294, rate: 0.0 },
+                    { limit: 28797, rate: 0.11 },
+                    { limit: 82341, rate: 0.30 },
+                    { limit: 177106, rate: 0.41 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.30 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.30 }
+                ]
+            },
+            canada: {
+                name: 'Canada',
+                brackets: [
+                    { limit: 55867, rate: 0.15 },
+                    { limit: 111733, rate: 0.205 },
+                    { limit: 173205, rate: 0.26 },
+                    { limit: 246752, rate: 0.29 },
+                    { limit: Infinity, rate: 0.33 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.165 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.15 }
+                ]
+            },
+            australia: {
+                name: 'Australia',
+                brackets: [
+                    { limit: 18200, rate: 0.0 },
+                    { limit: 45000, rate: 0.16 },
+                    { limit: 135000, rate: 0.30 },
+                    { limit: 190000, rate: 0.37 },
+                    { limit: Infinity, rate: 0.45 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.225 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.15 }
+                ]
+            },
+            netherlands: {
+                name: 'Netherlands',
+                brackets: [
+                    { limit: 73031, rate: 0.3582 },
+                    { limit: Infinity, rate: 0.4950 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.0 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.15 }
+                ]
+            },
+            italy: {
+                name: 'Italy',
+                brackets: [
+                    { limit: 15000, rate: 0.23 },
+                    { limit: 28000, rate: 0.25 },
+                    { limit: 50000, rate: 0.35 },
+                    { limit: Infinity, rate: 0.43 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.26 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.26 }
+                ]
+            },
+            spain: {
+                name: 'Spain',
+                brackets: [
+                    { limit: 12450, rate: 0.19 },
+                    { limit: 20200, rate: 0.24 },
+                    { limit: 35200, rate: 0.30 },
+                    { limit: 60000, rate: 0.37 },
+                    { limit: 300000, rate: 0.45 },
+                    { limit: Infinity, rate: 0.47 }
+                ],
+                capitalGains: [
+                    { limit: 6000, rate: 0.19 },
+                    { limit: 50000, rate: 0.21 },
+                    { limit: 200000, rate: 0.23 },
+                    { limit: Infinity, rate: 0.26 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.19 }
+                ]
+            },
+            switzerland: {
+                name: 'Switzerland',
+                brackets: [
+                    { limit: Infinity, rate: 0.20 }
+                ],
+                capitalGains: [
+                    { limit: Infinity, rate: 0.0 }
+                ],
+                dividends: [
+                    { limit: Infinity, rate: 0.20 }
+                ]
+            }
+        };
+
+        // Target jurisdiction data
+        const targetData = {
+            uae: {
+                name: 'UAE (Dubai)',
+                personalRate: 0,
+                corporateRate: 0,
+                capitalGainsRate: 0,
+                dividendRate: 0,
+                note: '9% corporate only above AED 375K'
+            },
+            portugal: {
+                name: 'Portugal NHR',
+                personalRate: 0.20,
+                corporateRate: 0.21,
+                capitalGainsRate: 0,
+                dividendRate: 0,
+                note: '0% on qualifying foreign income'
+            },
+            singapore: {
+                name: 'Singapore',
+                personalRate: 0.22,
+                corporateRate: 0.17,
+                capitalGainsRate: 0,
+                dividendRate: 0,
+                note: 'Territorial system'
+            },
+            switzerland: {
+                name: 'Switzerland',
+                personalRate: 0.25,
+                corporateRate: 0.085,
+                capitalGainsRate: 0,
+                dividendRate: 0.15,
+                note: 'Varies by canton (15-35% effective)'
+            },
+            malta: {
+                name: 'Malta',
+                personalRate: 0.35,
+                corporateRate: 0.05,
+                capitalGainsRate: 0,
+                dividendRate: 0,
+                note: 'Full imputation system'
+            },
+            cayman: {
+                name: 'Cayman Islands',
+                personalRate: 0,
+                corporateRate: 0,
+                capitalGainsRate: 0,
+                dividendRate: 0,
+                note: 'No direct taxes'
+            },
+            monaco: {
+                name: 'Monaco',
+                personalRate: 0,
+                corporateRate: 0,
+                capitalGainsRate: 0,
+                dividendRate: 0,
+                note: 'French nationals excluded'
+            }
+        };
+
+        // DOM Elements
+        const incomeSlider = document.getElementById('incomeSlider');
+        const incomeDisplay = document.getElementById('incomeDisplay');
+        const currentDomicile = document.getElementById('currentDomicile');
+        const targetJurisdiction = document.getElementById('targetJurisdiction');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const annualSavings = document.getElementById('annualSavings');
+        const currentTax = document.getElementById('currentTax');
+        const optimizedTax = document.getElementById('optimizedTax');
+        const currentRate = document.getElementById('currentRate');
+        const optimizedRate = document.getElementById('optimizedRate');
+        const lifetimeSavings = document.getElementById('lifetimeSavings');
+        const methodologyLink = document.getElementById('methodologyLink');
+        const methodologyModal = document.getElementById('methodologyModal');
+        const modalClose = document.getElementById('modalClose');
+
+        // Logarithmic slider conversion
+        function sliderToIncome(sliderValue) {
+            // Map 0-100 to $100K - $100M logarithmically
+            const minLog = Math.log10(100000);
+            const maxLog = Math.log10(100000000);
+            const logValue = minLog + (sliderValue / 100) * (maxLog - minLog);
+            return Math.round(Math.pow(10, logValue));
+        }
+
+        function incomeToSlider(income) {
+            const minLog = Math.log10(100000);
+            const maxLog = Math.log10(100000000);
+            const logValue = Math.log10(income);
+            return Math.round(((logValue - minLog) / (maxLog - minLog)) * 100);
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            if (amount >= 1000000) {
+                return '$' + (amount / 1000000).toFixed(2) + 'M';
+            } else if (amount >= 1000) {
+                return '$' + (amount / 1000).toFixed(0) + 'K';
+            }
+            return '$' + amount.toLocaleString();
+        }
+
+        function formatFullCurrency(amount) {
+            return '$' + amount.toLocaleString();
+        }
+
+        // Calculate tax for a jurisdiction
+        function calculateTax(income, jurisdiction, incomeType) {
+            const data = taxData[jurisdiction];
+            if (!data) return { tax: income * 0.30, rate: 0.30 };
+
+            let tax = 0;
+            let brackets;
+
+            switch (incomeType) {
+                case 'capitalgains':
+                    brackets = data.capitalGains || data.brackets;
+                    break;
+                case 'dividends':
+                    brackets = data.dividends || data.brackets;
+                    break;
+                case 'mixed':
+                    // Assume 50% employment, 25% capital gains, 25% dividends
+                    const empTax = calculateTax(income * 0.5, jurisdiction, 'employment');
+                    const cgTax = calculateTax(income * 0.25, jurisdiction, 'capitalgains');
+                    const divTax = calculateTax(income * 0.25, jurisdiction, 'dividends');
+                    const totalTax = empTax.tax + cgTax.tax + divTax.tax;
+                    return { tax: totalTax, rate: totalTax / income };
+                default:
+                    brackets = data.brackets;
+            }
+
+            let remainingIncome = income;
+            let previousLimit = 0;
+
+            for (const bracket of brackets) {
+                const taxableInBracket = Math.min(remainingIncome, bracket.limit - previousLimit);
+                if (taxableInBracket <= 0) break;
+                
+                tax += taxableInBracket * bracket.rate;
+                remainingIncome -= taxableInBracket;
+                previousLimit = bracket.limit;
+                
+                if (bracket.limit === Infinity) break;
+            }
+
+            // Add NIIT for US investment income
+            if (jurisdiction === 'us' && (incomeType === 'capitalgains' || incomeType === 'dividends')) {
+                const niitThreshold = 200000;
+                const niitIncome = Math.max(0, income - niitThreshold);
+                tax += niitIncome * data.niit;
+            }
+
+            return { tax: Math.round(tax), rate: tax / income };
+        }
+
+        // Calculate target jurisdiction tax
+        function calculateTargetTax(income, jurisdiction, incomeType) {
+            const data = targetData[jurisdiction];
+            if (!data) return { tax: 0, rate: 0 };
+
+            let rate;
+            switch (incomeType) {
+                case 'capitalgains':
+                    rate = data.capitalGainsRate;
+                    break;
+                case 'dividends':
+                    rate = data.dividendRate;
+                    break;
+                case 'mixed':
+                    // Weighted average
+                    rate = (data.personalRate * 0.5) + (data.capitalGainsRate * 0.25) + (data.dividendRate * 0.25);
+                    break;
+                default:
+                    rate = data.personalRate;
+            }
+
+            // Special case for Portugal NHR - foreign income is 0%
+            if (jurisdiction === 'portugal' && (incomeType === 'capitalgains' || incomeType === 'dividends')) {
+                rate = 0;
+            }
+
+            // Special case for Singapore territorial
+            if (jurisdiction === 'singapore' && (incomeType === 'capitalgains' || incomeType === 'dividends')) {
+                rate = 0;
+            }
+
+            const tax = income * rate;
+            return { tax: Math.round(tax), rate: rate };
+        }
+
+        // Update slider background
+        function updateSliderBackground() {
+            const value = incomeSlider.value;
+            incomeSlider.style.setProperty('--progress', value + '%');
+        }
+
+        // Main calculation function
+        function calculate() {
+            const income = sliderToIncome(incomeSlider.value);
+            const domicile = currentDomicile.value;
+            const target = targetJurisdiction.value;
+            const incomeType = document.querySelector('input[name="incomeType"]:checked').value;
+
+            // Update income display
+            incomeDisplay.textContent = formatFullCurrency(income);
+
+            // Calculate current tax
+            const currentResult = calculateTax(income, domicile, incomeType);
+            
+            // Calculate optimized tax
+            const optimizedResult = calculateTargetTax(income, target, incomeType);
+
+            // Calculate savings
+            const savings = currentResult.tax - optimizedResult.tax;
+            const lifetime = savings * 30;
+
+            // Update display
+            currentTax.textContent = formatFullCurrency(currentResult.tax);
+            optimizedTax.textContent = formatFullCurrency(optimizedResult.tax);
+            annualSavings.textContent = formatFullCurrency(savings);
+            lifetimeSavings.textContent = formatFullCurrency(lifetime);
+            currentRate.textContent = `Effective Rate: ${(currentResult.rate * 100).toFixed(1)}%`;
+            optimizedRate.textContent = `Effective Rate: ${(optimizedResult.rate * 100).toFixed(1)}%`;
+        }
+
+        // Event listeners
+        incomeSlider.addEventListener('input', function() {
+            updateSliderBackground();
+            calculate();
+        });
+
+        currentDomicile.addEventListener('change', calculate);
+        targetJurisdiction.addEventListener('change', calculate);
+        
+        document.querySelectorAll('input[name="incomeType"]').forEach(radio => {
+            radio.addEventListener('change', calculate);
+        });
+
+        calculateBtn.addEventListener('click', function() {
+            calculate();
+            // Scroll to results on mobile
+            if (window.innerWidth < 968) {
+                document.querySelector('.results-panel').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Modal controls
+        methodologyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            methodologyModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        modalClose.addEventListener('click', function() {
+            methodologyModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        methodologyModal.addEventListener('click', function(e) {
+            if (e.target === methodologyModal) {
+                methodologyModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Expandable content
+        document.querySelectorAll('.expand-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-expand');
+                const content = document.getElementById(targetId);
+                content.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Mobile navigation toggle
+        document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Initialize
+        updateSliderBackground();
+        calculate();
+    </script>
+</body>
+</html>

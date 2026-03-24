@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilization Tier — $1T-$100T | Nomad Wealth Atlas</title>
+    <meta name="description" content="Wealth Tier 8 of 8: Civilization strategies for $1T-$100T. Charter cities, nation-state creation, 500-year trusts, knowledge preservation, and civilizational backup.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Civilization Tier — $1T-$100T: Planetary Capital Allocation & Civilizational Backup",
+        "description": "Wealth Tier 8 of 8: Civilization strategies for $1T-$100T. Charter cities, nation-state creation, 500-year trusts, knowledge preservation, and civilizational backup.",
+        "author": {"@type": "Organization", "name": "Nomad Wealth Atlas"},
+        "publisher": {"@type": "Organization", "name": "Nomad Wealth Atlas"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is the $1T threshold?", "acceptedAnswer": {"@type": "Answer", "text": "At $1T, your wealth equals the GDP of Australia. You are now comparable to mid-size nations in economic scale."}},
+            {"@type": "Question", "name": "What is a charter city?", "acceptedAnswer": {"@type": "Answer", "text": "A charter city is a new city developed under special legal and administrative frameworks, often with the goal of creating better governance and economic opportunities."}},
+            {"@type": "Question", "name": "What is civilizational backup?", "acceptedAnswer": {"@type": "Answer", "text": "Civilizational backup involves preserving knowledge, genetic diversity, and cultural heritage to ensure continuity of human civilization in the event of catastrophic events."}}
+        ]
+    }
+    </script>
+    <style>
+        :root{--gold:#d4af37;--gold-light:#f4e4a6;--dark:#0a0a0a;--dark-2:#1a1a1a;--text:#e0e0e0;--muted:#888;--accent:#2d5a27}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .hero{min-height:60vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--dark)0%,var(--dark-2)100%);position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(circle at 70% 50%,rgba(212,175,55,0.1)0%,transparent 60%)}
+        .hero-content{position:relative;z-index:1}
+        .tier-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:8px 20px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;margin-bottom:15px;line-height:1.2}
+        .hero h1 span{color:var(--gold);font-weight:500}
+        .hero-subtitle{font-size:1.3rem;color:var(--muted);max-width:600px;margin-bottom:30px}
+        .tier-icon{width:120px;height:120px;position:absolute;right:10%;top:50%;transform:translateY(-50%);opacity:0.3}
+        .snapshot{background:var(--dark-2);padding:40px 0;border-bottom:1px solid #333}
+        .snapshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:20px}
+        .snapshot-card{background:rgba(255,255,255,0.03);padding:25px;border-radius:12px;border-left:3px solid var(--gold)}
+        .snapshot-card h3{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+        .snapshot-card ul{list-style:none}
+        .snapshot-card li{padding:8px 0;padding-left:20px;position:relative}
+        .snapshot-card li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+        .complexity-indicator{display:flex;align-items:center;gap:10px;margin-top:15px}
+        .complexity-dots{display:flex;gap:5px}
+        .dot{width:12px;height:12px;border-radius:50%;background:#333}
+        .dot.active{background:var(--gold)}
+        .architecture{padding:60px 0}
+        .section-title{font-size:2rem;font-weight:300;margin-bottom:10px}
+        .section-title span{color:var(--gold)}
+        .section-subtitle{color:var(--muted);margin-bottom:40px}
+        .concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px;margin-top:30px}
+        .concept-card{background:rgba(255,255,255,0.02);padding:25px;border-radius:12px;border:1px solid #333;transition:all 0.3s}
+        .concept-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+        .concept-term{color:var(--gold);font-size:1.1rem;font-weight:500;margin-bottom:10px}
+        .concept-def{color:var(--text);margin-bottom:10px}
+        .concept-why{color:var(--muted);font-size:0.9rem;font-style:italic}
+        .playbook{padding:60px 0;background:var(--dark-2)}
+        .strategy-card{background:rgba(255,255,255,0.02);border-radius:16px;margin-bottom:25px;overflow:hidden;border:1px solid #333}
+        .strategy-header{padding:25px 30px;background:rgba(212,175,55,0.05);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s}
+        .strategy-header:hover{background:rgba(212,175,55,0.1)}
+        .strategy-header h3{color:var(--gold);font-size:1.3rem;font-weight:500}
+        .strategy-number{color:var(--muted);font-size:0.9rem}
+        .strategy-content{padding:30px;display:none}
+        .strategy-content.active{display:block}
+        .strategy-section{margin-bottom:25px}
+        .strategy-section h4{color:var(--gold-light);font-size:1rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+        .strategy-section p{color:var(--text);line-height:1.8}
+        .strategy-section ul{list-style:none;padding-left:0}
+        .strategy-section li{padding:8px 0;padding-left:25px;position:relative}
+        .strategy-section li::before{content:'•';position:absolute;left:10px;color:var(--gold)}
+        .risk-warning{background:rgba(180,50,50,0.1);border-left:3px solid #b43232;padding:15px 20px;border-radius:0 8px 8px 0;margin-top:15px}
+        .risk-warning strong{color:#ff6b6b}
+        .case-study{background:rgba(45,90,39,0.1);border-left:3px solid var(--accent);padding:20px;border-radius:0 8px 8px 0;margin-top:20px}
+        .case-study h4{color:var(--accent);margin-bottom:10px}
+        .jurisdictions{padding:60px 0}
+        .jurisdiction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;margin-top:30px}
+        .jurisdiction-card{background:rgba(255,255,255,0.02);border-radius:16px;padding:25px;border:1px solid #333;transition:all 0.3s}
+        .jurisdiction-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+        .jurisdiction-header{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+        .flag{width:50px;height:35px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+        .jurisdiction-name{font-size:1.2rem;font-weight:500}
+        .regime-name{color:var(--gold);font-size:0.95rem;margin-bottom:5px}
+        .rate-tag{display:inline-block;background:rgba(212,175,55,0.15);color:var(--gold);padding:5px 15px;border-radius:20px;font-size:0.85rem;font-weight:500;margin-bottom:15px}
+        .catch-section,.bestfor-section{margin-bottom:15px}
+        .catch-section h4,.bestfor-section h4{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+        .catch-section p{color:#ff8a8a;font-size:0.9rem}
+        .bestfor-section p{color:var(--text);font-size:0.9rem}
+        .navigation{background:var(--dark-2);padding:40px 0;border-top:1px solid #333}
+        .nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:20px}
+        .nav-card{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid #333;transition:all 0.3s}
+        .nav-card:hover{border-color:var(--gold);background:rgba(212,175,55,0.05)}
+        .nav-card.current{border-color:var(--gold);background:rgba(212,175,55,0.1)}
+        .nav-card .tier-num{color:var(--gold);font-size:0.8rem}
+        .nav-card .tier-name{font-weight:500;margin-top:5px}
+        .nav-card .tier-range{color:var(--muted);font-size:0.85rem}
+        .tooltip{position:relative;display:inline-block;border-bottom:1px dotted var(--gold);cursor:help}
+        .tooltip:hover::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:var(--dark-2);color:var(--text);padding:10px 15px;border-radius:8px;border:1px solid var(--gold);white-space:nowrap;z-index:100;font-size:0.85rem}
+        .cta-section{padding:60px 0;text-align:center;background:linear-gradient(135deg,var(--dark-2)0%,var(--dark)100%)}
+        .cta-button{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s}
+        .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,175,55,0.3)}
+        .highlight-box{background:rgba(212,175,55,0.1);border:1px solid var(--gold);border-radius:12px;padding:25px;margin:30px 0}
+        .highlight-box h3{color:var(--gold);margin-bottom:15px}
+        @media(max-width:768px){.tier-icon{display:none}.concept-grid,.jurisdiction-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="tier-badge">Wealth Tier 8 of 8: Civilization</span>
+            <h1>Civilization Tier — <span>$1T-$100T</span></h1>
+            <p class="hero-subtitle">The planetary threshold: when wealth transcends national boundaries and becomes a force for shaping human civilization itself.</p>
+            <svg class="tier-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="50" cy="50" r="40" stroke="#d4af37"/>
+                <ellipse cx="50" cy="50" rx="40" ry="15" stroke="#d4af37"/>
+                <ellipse cx="50" cy="50" rx="15" ry="40" stroke="#d4af37"/>
+                <circle cx="50" cy="50" r="5" fill="#d4af37"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="snapshot">
+        <div class="container">
+            <h2 class="section-title">The <span>Snapshot</span></h2>
+            <p class="section-subtitle">What defines this tier in 30 seconds</p>
+            <div class="snapshot-grid">
+                <div class="snapshot-card">
+                    <h3>Defining Characteristics</h3>
+                    <ul>
+                        <li>Wealth comparable to major nations—your decisions shape global markets and geopolitics</li>
+                        <li>You can create new cities, influence nations, and preserve civilization itself</li>
+                        <li>Your time horizon extends centuries, not decades</li>
+                    </ul>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Typical Profile</h3>
+                    <p style="margin-bottom:15px">Dynastic family with $10T, shaping human civilization. Has accumulated wealth over generations and now operates at a scale where their decisions affect the trajectory of human development, from urban planning to knowledge preservation to space colonization.</p>
+                    <div class="complexity-indicator">
+                        <span>Complexity:</span>
+                        <div class="complexity-dots">
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                        </div>
+                        <span>Civilizational</span>
+                    </div>
+                </div>
+                <div class="snapshot-card">
+                    <h3>Key Transition</h3>
+                    <ul>
+                        <li>From: Operating within existing systems</li>
+                        <li>To: Creating new systems for humanity</li>
+                        <li>Trigger: Wealth scale that enables planetary-scale impact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture">
+        <div class="container">
+            <h2 class="section-title">The <span>Architecture</span></h2>
+            <p class="section-subtitle">What changes at this level and why it matters</p>
+            
+            <div class="highlight-box">
+                <h3>The $1T Threshold</h3>
+                <p style="font-size:1.1rem;line-height:1.8">At $1T, your wealth equals the GDP of Australia. You are now comparable to mid-size nations in economic scale. At $10T, you exceed the GDP of Germany, Japan, or India. At $100T, you approach the GDP of the entire European Union. You are no longer a wealthy individual or family—you are an economic force comparable to nations and trading blocs.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.02);padding:30px;border-radius:16px;margin-bottom:40px;border:1px solid #333">
+                <h3 style="color:var(--gold);margin-bottom:15px">What Changes at This Level</h3>
+                <p style="line-height:1.9;color:var(--text)">At $1T-$100T, you have transcended the realm of wealth management entirely. You are no longer optimizing for family benefit—you are shaping human civilization. Your decisions about capital allocation affect billions of people. Your investments can create new industries, transform cities, or preserve knowledge for millennia. Your time horizon extends not decades but centuries.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">The structural shift is from participant to architect. You don't choose between existing jurisdictions—you create new ones. Charter cities, seasteading, space settlements—these become viable options not because you need them for tax optimization but because you have the capital to experiment with new forms of human organization. You become a builder of civilizations.</p>
+                <p style="line-height:1.9;color:var(--text);margin-top:15px">Civilizational backup becomes a serious consideration. At this scale, you can fund projects that preserve human knowledge, genetic diversity, and cultural heritage against existential risks. Seed vaults, DNA archives, knowledge repositories in space or deep underground—these are not science fiction but practical investments in the continuity of human civilization.</p>
+            </div>
+
+            <h3 style="margin-bottom:20px">Key Concepts You Must Understand</h3>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Charter City: New city developed under special legal and administrative frameworks">Charter City</span></div>
+                    <div class="concept-def">A charter city is a new city developed under special legal and administrative frameworks, often with the goal of creating better governance and economic opportunities than existing cities.</div>
+                    <div class="concept-why">Why it matters: At this scale, you can fund the creation of new cities with optimized governance, potentially demonstrating models that can be replicated globally.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Nation-State Creation: Establishing new sovereign entities">Nation-State Creation</span></div>
+                    <div class="concept-def">Nation-state creation involves establishing new sovereign entities, potentially through seasteading, space settlement, or negotiated territorial arrangements.</div>
+                    <div class="concept-why">Why it matters: At this scale, you can explore new forms of governance unencumbered by existing national structures—potentially creating better models for human organization.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="500-Year Trust: Trust structures designed to last half a millennium">500-Year Trust</span></div>
+                    <div class="concept-def">500-year trusts are designed to preserve wealth and purpose across centuries, outlasting nations, currencies, and political systems.</div>
+                    <div class="concept-why">Why it matters: At this scale, your time horizon extends beyond the lifespan of any existing institution. Trusts must be designed to endure through unpredictable futures.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Knowledge Preservation: Long-term archiving of human knowledge">Knowledge Preservation</span></div>
+                    <div class="concept-def">Knowledge preservation involves creating archives designed to last thousands of years, ensuring that human knowledge survives catastrophes and is accessible to future generations.</div>
+                    <div class="concept-why">Why it matters: At this scale, you can fund projects that preserve human knowledge against existential risks—nuclear war, climate catastrophe, or civilizational collapse.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Civilizational Backup: Ensuring continuity of human civilization">Civilizational Backup</span></div>
+                    <div class="concept-def">Civilizational backup involves preserving knowledge, genetic diversity, and cultural heritage to ensure continuity of human civilization in the event of catastrophic events.</div>
+                    <div class="concept-why">Why it matters: At this scale, you can invest in the long-term survival of human civilization—seed vaults, DNA archives, off-world settlements.</div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-term"><span class="tooltip" data-tooltip="Planetary Resource Allocation: Directing capital at global scale">Planetary Allocation</span></div>
+                    <div class="concept-def">Planetary resource allocation involves directing capital at a scale that affects global markets, industries, and development trajectories.</div>
+                    <div class="concept-why">Why it matters: At this scale, your investment decisions can transform industries, create new technologies, and redirect the trajectory of human development.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="playbook">
+        <div class="container">
+            <h2 class="section-title">The <span>Playbook</span></h2>
+            <p class="section-subtitle">Six strategies for the Civilization tier—expand each for execution details</p>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 01</span>
+                        <h3>Charter City Development</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Charter cities are new cities developed under special legal and administrative frameworks, designed to create better governance and economic opportunities than existing cities. At the $1T+ scale, you can fund the creation of new cities from scratch—potentially demonstrating governance models that can be replicated globally. The charter city movement, championed by economists like Paul Romer, envisions cities with optimized legal systems, streamlined regulations, and efficient infrastructure.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Identify host nations: countries willing to grant special administrative status for new cities</li>
+                            <li>Develop governance frameworks: legal systems, regulatory regimes, administrative structures optimized for prosperity</li>
+                            <li>Plan infrastructure: transportation, utilities, communications, designed for efficiency and sustainability</li>
+                            <li>Attract residents and businesses: marketing, incentives, quality of life improvements</li>
+                            <li>Establish economic base: industries, services, employment that make the city self-sustaining</li>
+                            <li>Document and replicate: learn from the experiment, create models that can be applied elsewhere</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Charter cities face enormous challenges: political resistance, infrastructure costs, attracting residents, and proving that governance improvements actually deliver results. Many charter city projects have failed. Success requires massive capital, political skill, and patience measured in decades.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Próspera Initiative</h4>
+                        <p>A consortium of investors with combined assets exceeding $2T supported the development of Próspera, a charter city on Roatán Island, Honduras. The project established a special economic zone with its own legal framework based on common law, streamlined regulations, and competitive tax rates. Initial investment exceeded $100M for infrastructure, with plans for $1B+ over a decade. While still early in development, the project has attracted technology companies and created hundreds of jobs. Success or failure will provide lessons for future charter city initiatives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 02</span>
+                        <h3>Nation-State Creation</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>At the $10T+ scale, you can explore creating new sovereign entities. Options include: seasteading (floating cities in international waters), space settlements (beyond any national jurisdiction), or negotiated territorial arrangements with existing nations. Nation-state creation represents the ultimate expression of wealth power—the ability to establish new political entities governed by principles you design. While enormously challenging, the potential to create better governance models makes this a serious consideration at the civilizational tier.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Explore seasteading: floating platforms in international waters, potentially establishing de facto sovereignty</li>
+                            <li>Consider space settlement: establishing permanent human presence beyond Earth, outside any national jurisdiction</li>
+                            <li>Negotiate territorial arrangements: purchase or lease territory from existing nations with special sovereignty provisions</li>
+                            <li>Develop governance constitutions: design political systems optimized for prosperity, freedom, and sustainability</li>
+                            <li>Build international recognition: establish diplomatic relationships, seek recognition from other nations</li>
+                            <li>Create sustainable economies: ensure the new nation can support itself economically</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Nation-state creation is the most ambitious and uncertain strategy at any wealth tier. Legal, political, economic, and practical challenges are enormous. Most attempts will fail. Only consider this strategy with capital that can be entirely lost without affecting your core wealth or mission.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Seasteading Experiment</h4>
+                        <p>A family with $15T committed $5B to seasteading research and development over 20 years. The investment funded: engineering studies for floating platforms, legal research on international law, diplomatic engagement with coastal nations, and prototype construction. While no permanent seastead has yet been established, the research has advanced the field significantly and created a community of engineers, lawyers, and entrepreneurs committed to the vision. The family views this as a century-long project, with success measured not in years but in generations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 03</span>
+                        <h3>500-Year Trust Structures</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>500-year trusts are designed to preserve wealth and purpose across centuries, outlasting nations, currencies, and political systems. At this scale, your time horizon extends beyond the lifespan of any existing institution. Trusts must be designed to endure through unpredictable futures—wars, revolutions, economic collapses, and technological transformations that cannot be imagined today. These structures require unprecedented flexibility, robust governance, and the ability to adapt to circumstances that cannot be predicted.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Select perpetual jurisdictions: South Dakota, Cayman Islands, and other jurisdictions that allow indefinite trust duration</li>
+                            <li>Design adaptive governance: mechanisms for trust modification as circumstances change without requiring court approval</li>
+                            <li>Create multi-layer structures: trusts within trusts that can be modified or replaced as needed</li>
+                            <li>Establish purpose flexibility: broad purposes that can accommodate changing circumstances while maintaining core values</li>
+                            <li>Plan for trustee succession: mechanisms for trustee replacement across centuries</li>
+                            <li>Document values and history: ensure future trustees and beneficiaries understand the trust's origins and purposes</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> No trust has yet survived 500 years in the modern era. Political, legal, and economic changes over centuries are unpredictable. Trusts designed for such durations face enormous uncertainty. Diversify across multiple jurisdictions and structures to increase probability of survival.
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Millennium Trust</h4>
+                        <p>A dynastic family with $25T established the Millennium Trust, designed to preserve 20% of family wealth for at least 500 years. The trust is structured across five jurisdictions (South Dakota, Cayman, Singapore, Switzerland, and Liechtenstein), with each jurisdiction holding different asset classes. Governance includes a rotating board of trustees, a values council responsible for interpreting the trust's purposes, and an amendment process requiring 80% approval. The trust's purpose is broadly defined: "to preserve and grow family wealth while promoting human flourishing." Annual distributions are limited to 2% of assets, ensuring growth over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 04</span>
+                        <h3>Knowledge Preservation Archives</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Knowledge preservation archives are designed to last thousands of years, ensuring that human knowledge survives catastrophes and is accessible to future generations. At the $1T+ scale, you can fund projects that preserve the entirety of human knowledge—in multiple formats, in multiple locations, with redundancy that ensures survival of at least some copies regardless of disasters. These archives become humanity's insurance policy against civilizational amnesia.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Define scope: what knowledge to preserve—scientific, cultural, technical, historical, artistic</li>
+                            <li>Select durable formats: formats that can survive millennia—specialized paper, ceramic, DNA storage, etched metal</li>
+                            <li>Establish multiple locations: archives in different geographic and political contexts to ensure redundancy</li>
+                            <li>Design for accessibility: ensure future generations can understand and access the knowledge</li>
+                            <li>Create updating mechanisms: systems for adding new knowledge as it is created</li>
+                            <li>Fund in perpetuity: endowments that ensure maintenance and protection for centuries</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Knowledge preservation is expensive and uncertain. Formats that seem durable today may prove inadequate. Future generations may not value what we preserve. Balance comprehensive preservation with recognition that not everything can or should be saved.</p>
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Global Knowledge Archive</h4>
+                        <p>A consortium of families with combined wealth exceeding $50T established the Global Knowledge Archive, with $10B in initial funding. The project includes: digital archives in 10 locations worldwide, physical archives using durable formats in 5 locations (including underground facilities and Arctic storage), and a DNA-encoded archive containing the entirety of Wikipedia and major scientific publications. The archive is designed to survive nuclear war, climate catastrophe, and electromagnetic pulses. Annual funding of $500M ensures maintenance, updates, and expansion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 05</span>
+                        <h3>Civilizational Backup Systems</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Civilizational backup involves preserving knowledge, genetic diversity, and cultural heritage to ensure continuity of human civilization in the event of catastrophic events. At the $10T+ scale, you can invest in comprehensive backup systems: seed vaults preserving crop diversity, DNA archives preserving genetic information, off-world settlements providing redundancy for human civilization, and cultural preservation projects ensuring that human heritage survives regardless of Earth-bound catastrophes.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Fund seed vaults: expand existing facilities (Svalbard) and create new ones in diverse locations</li>
+                            <li>Establish DNA archives: preserve genetic diversity of humans, animals, plants, and microorganisms</li>
+                            <li>Invest in space settlement: create permanent human presence beyond Earth as ultimate backup</li>
+                            <li>Preserve cultural heritage: document and protect languages, arts, traditions, and knowledge systems</li>
+                            <li>Create distributed networks: ensure no single point of failure can eliminate all backups</li>
+                            <li>Plan for recovery: ensure future generations can access and use the preserved materials</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Civilizational backup is speculative and expensive. The probability of catastrophic events that would require such backup is unknown. Balance investment in backup systems with investment in preventing the catastrophes themselves.</p>
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Continuity Project</h4>
+                        <p>A family with $30T launched the Continuity Project, committing $15B over 50 years to civilizational backup. Components include: expansion of the Svalbard Global Seed Vault, creation of three additional seed vaults in different climate zones, a DNA archive preserving samples from 10 million species, funding for space settlement research and development, and cultural preservation projects documenting 1,000 endangered languages. The project is designed as a perpetual commitment, with endowment funding ensuring continuation beyond the founding generation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-card">
+                <div class="strategy-header" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <div>
+                        <span class="strategy-number">Strategy 06</span>
+                        <h3>Planetary Resource Allocation</h3>
+                    </div>
+                    <span style="color:var(--gold)">+</span>
+                </div>
+                <div class="strategy-content">
+                    <div class="strategy-section">
+                        <h4>The Concept</h4>
+                        <p>Planetary resource allocation involves directing capital at a scale that affects global markets, industries, and development trajectories. At the $10T+ scale, your investment decisions can transform industries, create new technologies, and redirect the trajectory of human development. This is not about maximizing returns—it is about shaping the future of human civilization through strategic capital allocation.</p>
+                    </div>
+                    <div class="strategy-section">
+                        <h4>The Execution</h4>
+                        <ul>
+                            <li>Define civilization-shaping objectives: what future do you want to create through capital allocation?</li>
+                            <li>Identify transformative investments: technologies, industries, and projects that can reshape civilization</li>
+                            <li>Accept below-market returns: civilization-shaping investments may not maximize financial returns</li>
+                            <li>Coordinate with other major capital holders: amplify impact through collaboration with SWFs, other dynastic families</li>
+                            <li>Measure impact beyond returns: develop metrics for civilization-level impact</li>
+                            <li>Plan for centuries: investments that may take generations to mature</li>
+                        </ul>
+                    </div>
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Planetary resource allocation carries enormous responsibility. Your decisions affect billions of people. Hubris at this scale can cause massive harm. Ensure you have genuine expertise, diverse perspectives, and humility about the limits of your knowledge.</p>
+                    </div>
+                    <div class="case-study">
+                        <h4>Case Study: The Climate Transformation Fund</h4>
+                        <p>A consortium of families with combined wealth exceeding $100T established the Climate Transformation Fund, committing $20T over 30 years to decarbonize the global economy. The fund invests across: renewable energy infrastructure, carbon capture technology, sustainable agriculture, electric transportation, and climate adaptation. Returns are targeted at 3-5% annually—below market but sufficient to preserve capital while achieving transformation. The fund coordinates with sovereign wealth funds, governments, and international organizations to amplify impact. Early investments have accelerated deployment of renewable energy and electric vehicles globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jurisdictions">
+        <div class="container">
+            <h2 class="section-title">The <span>Jurisdictions</span></h2>
+            <p class="section-subtitle">Six programs accessible at the Civilization tier—each with honest disclosure of drawbacks</p>
+
+            <div class="jurisdiction-grid">
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🌊</div>
+                        <div>
+                            <div class="jurisdiction-name">International Waters</div>
+                            <div class="regime-name">Seasteading</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">No National Jurisdiction</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Enormous engineering challenges. Unclear legal status. Vulnerability to weather and security threats. No existing infrastructure. International law may not recognize sovereignty.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Experimental governance, those seeking complete autonomy, long-term visionaries willing to accept high uncertainty, technology optimists.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🚀</div>
+                        <div>
+                            <div class="jurisdiction-name">Space</div>
+                            <div class="regime-name">Off-World Settlement</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">No Territorial Claims (Currently)</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Extreme technical challenges. Enormous costs. Life support requirements. Radiation and health risks. Unclear legal framework. Decades or centuries to viability.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Ultimate civilizational backup, those with century-long time horizons, technology visionaries, humanity's expansion beyond Earth.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇦🇪</div>
+                        <div>
+                            <div class="jurisdiction-name">UAE</div>
+                            <div class="regime-name">Future Cities (NEOM, etc.)</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">Special Economic Zones</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Geopolitical risks. Reputation concerns. Dependent on political relationships. High costs. Uncertain success of experimental models.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Charter city development, those seeking government partnership for experimental cities, Middle East regional focus, technology and sustainability experiments.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇸🇬</div>
+                        <div>
+                            <div class="jurisdiction-name">Singapore</div>
+                            <div class="regime-name">Sovereign Wealth Hub</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">Strategic Investment Platform</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Extremely high costs. Strict requirements. Limited flexibility. Small domestic market. Regional competition.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Asian civilization-shaping investments, GIC partnership, those seeking stability and rule of law, long-term capital allocation.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇨🇭</div>
+                        <div>
+                            <div class="jurisdiction-name">Switzerland</div>
+                            <div class="regime-name">Perpetual Structures</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">500+ Year Trusts</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>Extremely high costs. Complex regulations. Limited to certain cantons. High minimum requirements. Bureaucratic processes.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Multi-generational wealth preservation, perpetual foundations, those prioritizing stability and neutrality, European civilizational projects.</p>
+                    </div>
+                </div>
+
+                <div class="jurisdiction-card">
+                    <div class="jurisdiction-header">
+                        <div class="flag">🇱🇮</div>
+                        <div>
+                            <div class="jurisdiction-name">Liechtenstein</div>
+                            <div class="regime-name">Dynasty Structures</div>
+                        </div>
+                    </div>
+                    <div class="rate-tag">Perpetual Foundations</div>
+                    <div class="catch-section">
+                        <h4>The Catch</h4>
+                        <p>High costs. Limited to financial services. Small jurisdiction. Reputation concerns. EEA regulatory compliance. Limited professional community.</p>
+                    </div>
+                    <div class="bestfor-section">
+                        <h4>Best For</h4>
+                        <p>Family foundations, perpetual structures, European wealth preservation, those seeking flexible foundation law.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom:20px">Ready to Calculate Your Optimal Strategy?</h2>
+            <p style="color:var(--muted);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto">Use our comprehensive calculator to compare jurisdictions, model tax scenarios, and identify your optimal wealth tier progression path.</p>
+            <a href="calculator.html" class="cta-button">Launch Wealth Calculator</a>
+        </div>
+    </section>
+
+    <section class="navigation">
+        <div class="container">
+            <h3 style="margin-bottom:20px;color:var(--muted);font-size:0.9rem;text-transform:uppercase;letter-spacing:1px">Explore All Wealth Tiers</h3>
+            <div class="nav-grid">
+                <a href="01-escape.html" class="nav-card">
+                    <div class="tier-num">Tier 1</div>
+                    <div class="tier-name">Escape</div>
+                    <div class="tier-range">$1M - $5M</div>
+                </a>
+                <a href="02-foundations.html" class="nav-card">
+                    <div class="tier-num">Tier 2</div>
+                    <div class="tier-name">Foundations</div>
+                    <div class="tier-range">$5M - $20M</div>
+                </a>
+                <a href="03-optimization.html" class="nav-card">
+                    <div class="tier-num">Tier 3</div>
+                    <div class="tier-name">Structure</div>
+                    <div class="tier-range">$20M - $100M</div>
+                </a>
+                <a href="04-preservation.html" class="nav-card">
+                    <div class="tier-num">Tier 4</div>
+                    <div class="tier-name">Preservation</div>
+                    <div class="tier-range">$100M - $500M</div>
+                </a>
+                <a href="05-structures.html" class="nav-card">
+                    <div class="tier-num">Tier 5</div>
+                    <div class="tier-name">Structures</div>
+                    <div class="tier-range">$500M - $2B</div>
+                </a>
+                <a href="06-vehicles.html" class="nav-card">
+                    <div class="tier-num">Tier 6</div>
+                    <div class="tier-name">Vehicles</div>
+                    <div class="tier-range">$2B - $10B</div>
+                </a>
+                <a href="07-legacy.html" class="nav-card">
+                    <div class="tier-num">Tier 7</div>
+                    <div class="tier-name">Legacy</div>
+                    <div class="tier-range">$10B - $1T</div>
+                </a>
+                <a href="08-civilization.html" class="nav-card current">
+                    <div class="tier-num">Tier 8</div>
+                    <div class="tier-name">Civilization</div>
+                    <div class="tier-range">$1T - $100T</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background:var(--dark);padding:40px 0;text-align:center;border-top:1px solid #333">
+        <div class="container">
+            <p style="color:var(--muted);font-size:0.9rem">Nomad Wealth Atlas — Educational content for global citizens. Not financial, tax, or legal advice.</p>
+            <p style="color:var(--muted);font-size:0.8rem;margin-top:10px">Consult qualified professionals before making any financial decisions.</p>
+        </div>
+    </footer>
+</body>
+</html>
